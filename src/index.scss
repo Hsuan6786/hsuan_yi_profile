@@ -1,0 +1,35 @@
+#root {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: '#F5F3ED';
+}
+
+.slider,
+.slider-same-height {
+  .slick-list {
+    margin: 0 -16px !important;
+  }
+  .slick-slide > div {
+    padding: 0 16px;
+  }
+  @media only screen and (max-width: 768px) {
+    .slick-list {
+      margin: -16px -8px !important;
+    }
+  }
+}
+
+.slider-same-height {
+  .slick-track {
+    display: flex;
+  }
+  .slick-slide {
+    height: inherit !important;
+    & > div {
+      height: 100%;
+    }
+  }
+}
