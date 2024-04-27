@@ -29,7 +29,7 @@ export default function PersonalCard() {
         socialMedias={['104', 'cakeresume', 'mail']}
       />
       <InputSendEmail
-        buttonProps={{
+        btnattr={{
           alignSelf: { base: 'center', sm: 'unset' },
         }}
       />

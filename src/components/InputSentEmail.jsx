@@ -25,7 +25,7 @@ export default function InputSendEmail(props) {
         isReadOnly={true}
       />
       <CustomButton
-        {...props.buttonProps}
+        {...props.btnattr}
         label="Sent email"
         color="accent"
       />
