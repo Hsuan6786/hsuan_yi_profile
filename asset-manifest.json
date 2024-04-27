@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://hsuan6786.github.io/hsuan_yi_profile/static/css/main.04ef6e4c.css",
-    "main.js": "https://hsuan6786.github.io/hsuan_yi_profile/static/js/main.0ca9afeb.js",
+    "main.js": "https://hsuan6786.github.io/hsuan_yi_profile/static/js/main.efd07f24.js",
     "static/css/129.ce3f1e45.chunk.css": "https://hsuan6786.github.io/hsuan_yi_profile/static/css/129.ce3f1e45.chunk.css",
     "static/js/129.c9a311dc.chunk.js": "https://hsuan6786.github.io/hsuan_yi_profile/static/js/129.c9a311dc.chunk.js",
     "static/js/290.ea52811e.chunk.js": "https://hsuan6786.github.io/hsuan_yi_profile/static/js/290.ea52811e.chunk.js",
@@ -137,7 +137,7 @@
     "static/media/icon-arrow_open.svg": "https://hsuan6786.github.io/hsuan_yi_profile/static/media/icon-arrow_open.db184d11daff4905f419fc3b1b79ec58.svg",
     "static/media/icon-light-mail.svg": "https://hsuan6786.github.io/hsuan_yi_profile/static/media/icon-light-mail.35bfed4256f7d700bbe3224f87ac72e5.svg",
     "main.04ef6e4c.css.map": "https://hsuan6786.github.io/hsuan_yi_profile/static/css/main.04ef6e4c.css.map",
-    "main.0ca9afeb.js.map": "https://hsuan6786.github.io/hsuan_yi_profile/static/js/main.0ca9afeb.js.map",
+    "main.efd07f24.js.map": "https://hsuan6786.github.io/hsuan_yi_profile/static/js/main.efd07f24.js.map",
     "129.ce3f1e45.chunk.css.map": "https://hsuan6786.github.io/hsuan_yi_profile/static/css/129.ce3f1e45.chunk.css.map",
     "129.c9a311dc.chunk.js.map": "https://hsuan6786.github.io/hsuan_yi_profile/static/js/129.c9a311dc.chunk.js.map",
     "290.ea52811e.chunk.js.map": "https://hsuan6786.github.io/hsuan_yi_profile/static/js/290.ea52811e.chunk.js.map",
@@ -153,6 +153,6 @@
   },
   "entrypoints": [
     "static/css/main.04ef6e4c.css",
-    "static/js/main.0ca9afeb.js"
+    "static/js/main.efd07f24.js"
   ]
 }
