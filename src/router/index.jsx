@@ -18,15 +18,15 @@ const routers = [
         element: <Home />
       },
       {
-        path: "/works",
+        path: "works",
         element: <Works />
       },
       {
-        path: "/resume",
+        path: "resume",
         element: <Resume />
       },
       {
-        path: "/contacts",
+        path: "contacts",
         element: <Contacts />
       },
     ],
@@ -41,4 +41,4 @@ const routers = [
   },
 ];
 
-export default createBrowserRouter(routers);
+export default createBrowserRouter(routers, { basename: "/hsuan_yi_profile" });
