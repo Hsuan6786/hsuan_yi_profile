@@ -2,7 +2,9 @@
   "name": "hsuan_yi_profile",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/Hsuan6786/hsuan_yi_profile",
   "dependencies": {
+    "-": "^0.0.1",
     "@babel/core": "^7.16.0",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
@@ -33,6 +35,7 @@
     "file-loader": "^6.2.0",
     "framer-motion": "^11.0.28",
     "fs-extra": "^10.0.0",
+    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
@@ -57,6 +60,7 @@
     "resolve-url-loader": "^4.0.0",
     "sass": "^1.75.0",
     "sass-loader": "^12.3.0",
+    "save": "^2.9.0",
     "semver": "^7.3.5",
     "slick-carousel": "^1.8.1",
     "source-map-loader": "^3.0.0",
@@ -72,7 +76,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
