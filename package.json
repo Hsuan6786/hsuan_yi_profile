@@ -2,7 +2,7 @@
   "name": "hsuan_yi_profile",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Hsuan6786/hsuan_yi_profile",
+
   "dependencies": {
     "-": "^0.0.1",
     "@babel/core": "^7.16.0",
