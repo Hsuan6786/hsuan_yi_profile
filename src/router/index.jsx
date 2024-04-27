@@ -14,19 +14,19 @@ const routers = [
     children: [
       {
         index: true,
-        path: "/",
+        path: "",
         element: <Home />
       },
       {
-        path: "works",
+        path: "/works",
         element: <Works />
       },
       {
-        path: "resume",
+        path: "/resume",
         element: <Resume />
       },
       {
-        path: "contacts",
+        path: "/contacts",
         element: <Contacts />
       },
     ],

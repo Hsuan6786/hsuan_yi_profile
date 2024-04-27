@@ -44,11 +44,12 @@ export default function GachaAnimation() {
         '+=.9'
       )
 
+      const duration = .5
     // gacha animation
     vibrateTween.current = gsap
       .timeline({ paused: true })
-      .to('#egg', {
-        duration: 1,
+      .from('#egg', {
+        duration,
         y: 5,
         ease: RoughEase.ease.config({
           strength: 8,
@@ -61,7 +62,7 @@ export default function GachaAnimation() {
       .to(
         '#egg',
         {
-          duration: 1,
+          duration,
           y: -5,
           ease: RoughEase.ease.config({
             strength: 8,
@@ -72,13 +73,13 @@ export default function GachaAnimation() {
           clearProps: 'x',
           stagger: 0.02,
         },
-        '+=1'
+        '+=.5'
       )
 
     rotateTween.current = gsap
       .timeline({ paused: true })
       .from('#egg', {
-        duration: .5,
+        duration,
         rotation: -45,
         transformOrigin: 'center',
         ease: 'none',
@@ -86,13 +87,13 @@ export default function GachaAnimation() {
       .to(
         '#egg',
         {
-          duration: .5,
-          rotation: -90,
+          duration,
+          rotation: -85,
           transformOrigin: 'center',
           ease: 'none',
-          stagger: 0.2,
+          stagger: 0.1,
         },
-        '+=1'
+        '+=.5'
       )
       .from('#get-egg', {
         scale: 0.2,
@@ -116,7 +117,6 @@ export default function GachaAnimation() {
   })
 
   function playAnimation() {
-    console.log('click')
     play(handlerTween)
     play(vibrateTween)
     play(rotateTween)
