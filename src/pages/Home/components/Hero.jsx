@@ -4,7 +4,7 @@ import Button from '@/components/Button'
 
 export default function Hero() {
   return (
-    <Box pos="relative">
+    <Box pos="relative"  pb="5xl">
       <Image
         pos="absolute"
         top="0"
