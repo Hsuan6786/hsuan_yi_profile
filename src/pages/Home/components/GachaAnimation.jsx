@@ -128,14 +128,14 @@ export default function GachaAnimation() {
     <>
       <svg
         width="640"
-        height="640"
+        height="740"
         viewBox="0 0 640 740"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <rect
           width="640"
-          height="640"
+          height="740"
         />
         <g id="Group 4435">
           <g

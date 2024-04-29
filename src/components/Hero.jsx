@@ -13,7 +13,7 @@ import SvgIcon from '@/components/SvgIcon'
 
 
 export default function HeroSection({ title, svgImage, children }) {
-  console.log(svgImage)
+
   return (
     <Box
       pos="relative"
@@ -24,6 +24,7 @@ export default function HeroSection({ title, svgImage, children }) {
         top="0"
         left="0"
         zIndex="-1"
+        w="100%"
         src="assets/curve.svg"
       />
       <Box

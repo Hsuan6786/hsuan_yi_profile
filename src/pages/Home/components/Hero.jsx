@@ -9,6 +9,7 @@ export default function Hero() {
         pos="absolute"
         top="0"
         zIndex="-1"
+        w="100%"
         src="assets/curve.svg"
       />
       <Stack direction={['column', 'row']}>

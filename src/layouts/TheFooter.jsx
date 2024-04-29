@@ -13,6 +13,8 @@ import {
 
 import SocialMediaLinks from '../components/SocialMediaLinks'
 import InputSendEmail from '../components/InputSentEmail'
+import {useNavigate} from 'react-router-dom'
+
 const packageJson = require('../../package.json')
 
 const version = packageJson.version
@@ -81,6 +83,7 @@ export default function TheFooter() {
 }
 
 function _Menu() {
+  const navigate = useNavigate() 
   const menu = [
     {
       label: 'Home',
@@ -112,6 +115,7 @@ function _Menu() {
           variant="link"
           px="md"
           mr="xs"
+          onClick={()=> navigate(item.to)}
         >
           {item.label}
         </Button>

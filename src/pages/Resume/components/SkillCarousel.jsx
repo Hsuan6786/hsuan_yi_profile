@@ -46,7 +46,13 @@ export default function SkillCarousel() {
         pb="4xl"
       >
         <Text textStyle={'h2'}>Skills</Text>
-        <Text mb="xl" color="beige.400"   textStyle={'content'}>技能</Text>
+        <Text
+          mb="xl"
+          color="beige.400"
+          textStyle={'content'}
+        >
+          技能
+        </Text>
         <_NavigationArrow sliderRef={sliderRef} />
       </VStack>
       <Slider
@@ -71,7 +77,7 @@ export default function SkillCarousel() {
 }
 
 function _Card({ card }) {
-  console.log(card)
+
   return (
     <Card
       w={{ base: '75vw', sm: '55vw', md: '45vw', lg: 'min(336px, 25vw)' }}
@@ -105,9 +111,21 @@ function _Card({ card }) {
           ))}
         </List>
       </CardBody>
-      <Divider my="2xl" borderBottomWidth="2px" color="beige.300" />
+      <Divider
+        my="2xl"
+        borderBottomWidth="2px"
+        color="beige.300"
+      />
+      
       <CardFooter p="0">
-        <Text mr="md" textStyle={'content'} color="beige.400">Tools</Text>
+       <Text
+          mr="md"
+          textStyle={'content'}
+          color="beige.400"
+          opacity={(card.tools || []).length? 1: 0}
+        >
+          Tools
+        </Text> 
         {card.tools?.map((tool, idx) => (
           <Image
             mr="xs"
