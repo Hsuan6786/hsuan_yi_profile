@@ -22,6 +22,8 @@ export default function Hero() {
             <Box
               textStyle="h1"
               textColor={'secondary'}
+              lineHeight={.8}
+              pb="xl"
             >
               Hsuan!
             </Box>
