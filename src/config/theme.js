@@ -90,6 +90,5 @@ export default extendTheme({
       400: '#9D9791',
     },
     'dark-green': '#585D57',
-    'dark-orange': '#9D9791',
   },
 })

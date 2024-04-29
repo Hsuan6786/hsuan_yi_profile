@@ -36,14 +36,17 @@ export default function SkillCarousel() {
   }
 
   return (
-    <Flex pt="4xl" flexDirection={{base: 'column', sm: 'row'}}>
+    <Flex
+      pt="4xl"
+      flexDirection={{ base: 'column', sm: 'row' }}
+    >
       <VStack
         justifyContent={'center'}
         minW="min(320px,25%)"
-        pb='4xl'
+        pb="4xl"
       >
-        <Heading>Skills</Heading>
-        <Text>技能</Text>
+        <Text textStyle={'h2'}>Skills</Text>
+        <Text mb="xl" color="beige.400"   textStyle={'content'}>技能</Text>
         <_NavigationArrow sliderRef={sliderRef} />
       </VStack>
       <Slider
@@ -51,7 +54,7 @@ export default function SkillCarousel() {
         style={{
           minHeight: 0,
           minWidth: 0,
-          paddingLeft: '16px'
+          paddingLeft: '16px',
         }}
         {...settings}
         className="slider-same-height"
@@ -60,7 +63,7 @@ export default function SkillCarousel() {
           <_Card
             key={`skill-${idx}`}
             card={card}
-          ></_Card>
+          />
         ))}
       </Slider>
     </Flex>
@@ -68,14 +71,15 @@ export default function SkillCarousel() {
 }
 
 function _Card({ card }) {
+  console.log(card)
   return (
     <Card
-      w={{base: '75vw', sm: '55vw', md: '45vw', lg: 'min(336px, 25vw)'}}
+      w={{ base: '75vw', sm: '55vw', md: '45vw', lg: 'min(336px, 25vw)' }}
       h="100%"
       px="xl"
       py="2xl"
     >
-      <CardBody>
+      <CardBody p="0">
         <Heading
           pb="md"
           textStyle="h4"
@@ -83,7 +87,7 @@ function _Card({ card }) {
           {card.title}
         </Heading>
         <List spacing={3}>
-          {card.skills.map((s,index) => (
+          {card.skills.map((s, index) => (
             <ListItem
               key={`skill-${index}`}
               color="accent"
@@ -92,6 +96,7 @@ function _Card({ card }) {
               <SvgIcon name="star" />
               <Text
                 pl="xs"
+                textStyle={'body1'}
                 color="dark-green"
               >
                 {s}
@@ -100,8 +105,18 @@ function _Card({ card }) {
           ))}
         </List>
       </CardBody>
-      <Divider />
-      <CardFooter></CardFooter>
+      <Divider my="2xl" borderBottomWidth="2px" color="beige.300" />
+      <CardFooter p="0">
+        <Text mr="md" textStyle={'content'} color="beige.400">Tools</Text>
+        {card.tools?.map((tool, idx) => (
+          <Image
+            mr="xs"
+            w="24px"
+            key={`tool-${idx}`}
+            src={`assets/icon-${tool}.svg`}
+          />
+        ))}
+      </CardFooter>
     </Card>
   )
 }

@@ -51,17 +51,14 @@ export default function TheFooter() {
             sm: 'assets/bg-footer.png',
           })}
         />
-        <VStack mt="auto">
+        <VStack mt="auto" spacing="2xl" >
           <_Menu />
           <InputSendEmail
             display={{ base: 'none', sm: 'block' }}
-            mt="2xl"
             px="2xl"
           />
-          <SocialMediaLinks mt="2xl" />
-        </VStack>
-        <Box
-          mt="auto"
+          <SocialMediaLinks />
+          <Box
           textAlign={'center'}
           pb={{ base: '2xl', sm: 'md' }}
         >
@@ -74,8 +71,10 @@ export default function TheFooter() {
             <Divider orientation="vertical" />
             <Text>Code By ：Ting Yu Chen</Text>
           </HStack>
-          <Text color="#ccc">version {version}</Text>
+          <Text color="#919191">version {version}</Text>
         </Box>
+        </VStack>
+       
       </VStack>
     </Box>
   )

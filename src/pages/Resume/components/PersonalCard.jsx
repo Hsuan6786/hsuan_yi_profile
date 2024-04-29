@@ -61,17 +61,17 @@ function _InfoSection({ info,index }) {
   const { list, title } = info
   return (
     <Box pt={index%2 !==0 && "2xl"}>
-      <Heading textStyle={'h3'}>{title}</Heading>
+      <Heading textStyle={'h3'} mb="xxs">{title}</Heading>
       <UnorderedList
         p="0"
         m="0"
         styleType="none"
       >
         {list.map((item, idx) => (
-          <ListItem  key={`info-list-${idx}`}>
-            <HStack>
-              <Text>{item.label}</Text>
-              <Text>{item.value}</Text>
+          <ListItem mt="xxs"  key={`info-list-${idx}`}>
+            <HStack color="dark-green">
+              <Text textStyle={'content'}>{item.label}</Text>
+              <Text textStyle={'content'}>{item.value}</Text>
             </HStack>
           </ListItem>
         ))}

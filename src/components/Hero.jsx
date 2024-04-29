@@ -42,6 +42,7 @@ export default function HeroSection({ title, svgImage, children }) {
           <Text textStyle={'h1'}>{title}</Text>
           <Breadcrumb
             spacing="8px"
+            color="beige.400"
             separator={<GoChevronRight color="grey.500" />}
           >
             <BreadcrumbItem>

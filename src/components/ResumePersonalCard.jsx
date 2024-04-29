@@ -8,7 +8,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 
-export default function PersonalCard({children}) {
+export default function PersonalCard({children,}) {
   return (
     <Card
       w="min(938px,90%)"
@@ -48,20 +48,6 @@ export default function PersonalCard({children}) {
       >
         <CardBody p={{base: 0, sm: 'lg'}}>
           {children}
-          {/* <Heading textStyle={'h3'}>Information</Heading>
-          <HStack>
-            <Text>姓名</Text>
-            <Text>黃宣頤</Text>
-          </HStack>
-          <HStack>
-            <Text>Mail</Text>
-            <Text>hsuan88815@gmail.com</Text>
-          </HStack>
-          <SocialMediaLinks
-            py="md"
-            socialMedias={['104', 'cakeresume', 'mail']}
-          />
-          <InputSendEmail /> */}
         </CardBody>
       </Stack>
     </Card>

@@ -12,7 +12,7 @@ export default function Resume() {
       <SkillCarousel />
       <WorkExperience />
       <PersonalCard />
-      <Box mx="lg">
+      <Box px={{base: 'lg', sm:'0'}}>
         <ContactsSection />
       </Box>
     </>

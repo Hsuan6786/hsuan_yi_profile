@@ -28,7 +28,7 @@ export default function TitleSection({ heading, title, content, children, viewBt
             {heading}
           </Box>
           <Text
-            textColor={'dark-orange'}
+            textColor={'beige.400'}
             textStyle={'content'}
           >
             {title}
