@@ -7,6 +7,8 @@ const Works = lazy(() => import('@/pages/Works'))
 const Resume = lazy(() => import('@/pages/Resume'))
 const Contacts = lazy(() => import('@/pages/Contacts'))
 
+const PageNotFound = lazy(()=> import('@/pages/PageNotFound'))
+
 const routers = [
   {
     path: "/",
@@ -32,13 +34,22 @@ const routers = [
     ],
   },
   {
-    path: "*",
-    lazy: () => import("@/pages/PageNotFound"),
+  
+    element: <MainLayout />,
+    children: [
+      {
+        path: "*",
+        element: <PageNotFound />
+      },
+      {
+        path: "/404",
+        element: <PageNotFound />
+      },
+    ]
+  
   },
-  {
-    path: "/404",
-    lazy: () => import("@/pages/PageNotFound"),
-  },
+  
 ];
 
-export default createBrowserRouter(routers, { basename: "/hsuan_yi_profile" });
+const basename = process.env.PUBLIC_URL;
+export default createBrowserRouter(routers, { basename });
