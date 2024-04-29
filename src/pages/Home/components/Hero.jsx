@@ -39,7 +39,6 @@ export default function Hero() {
               label="Resume"
               color="accent"
               variant="outline"
-              rightIcon={true}
               rounded={true}
             />
           </Container>

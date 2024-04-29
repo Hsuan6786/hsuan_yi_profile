@@ -130,7 +130,8 @@ function _ExperienceLayout({ experience }) {
           textStyle={'body2'}
         >
           Job
-          <Text textStyle={'content'}>{index + 1}</Text>
+          <Text textStyle={'content'}>{index<10 ? `
+          0${index + 1}`: index+1}</Text>
         </Tag>
         <Divider
           borderColor="beige.300"

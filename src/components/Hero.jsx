@@ -9,8 +9,11 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { GoChevronRight } from 'react-icons/go'
+import SvgIcon from '@/components/SvgIcon'
+
 
 export default function HeroSection({ title, svgImage, children }) {
+  console.log(svgImage)
   return (
     <Box
       pos="relative"
@@ -32,7 +35,7 @@ export default function HeroSection({ title, svgImage, children }) {
         w={{ base: '100%', sm: 'min(938px, 83.33%)' }}
       >
         <VStack
-          flex={1}
+          w={{base: '100%', sm: 'min(363px, 50%)'}}
           alignItems={'flex-start'}
           justifyContent={'center'}
         >
@@ -54,9 +57,11 @@ export default function HeroSection({ title, svgImage, children }) {
           mt="2xl"
           flex={1}
           maxH="368px"
+          
         >
+        
           <Image
-            w="100%"
+          ml='auto'
             h="100%"
             src={`assets/${svgImage}.svg`}
           />

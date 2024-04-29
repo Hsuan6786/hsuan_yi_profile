@@ -12,7 +12,7 @@ export default function Resume() {
       <SkillCarousel />
       <WorkExperience />
       <PersonalCard />
-      <Box px="lg">
+      <Box mx="lg">
         <ContactsSection />
       </Box>
     </>

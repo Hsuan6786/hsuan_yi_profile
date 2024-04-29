@@ -13,10 +13,9 @@ import {
 
 import SocialMediaLinks from '../components/SocialMediaLinks'
 import InputSendEmail from '../components/InputSentEmail'
-const packageJson = require('../../package.json');
+const packageJson = require('../../package.json')
 
-const version = packageJson.version;
-
+const version = packageJson.version
 
 export default function TheFooter() {
   return (
@@ -34,7 +33,7 @@ export default function TheFooter() {
         w="min(880px, 80%)"
         src="assets/illustration-gacha-opened.svg"
       />
-      <Flex
+      <VStack
         pos="relative"
         wrap={'nowrap'}
         minH={'440px'}
@@ -57,23 +56,27 @@ export default function TheFooter() {
           <InputSendEmail
             display={{ base: 'none', sm: 'block' }}
             mt="2xl"
-            px="2xl" 
+            px="2xl"
           />
           <SocialMediaLinks mt="2xl" />
+        </VStack>
+        <Box
+          mt="auto"
+          textAlign={'center'}
+          pb={{ base: '2xl', sm: 'md' }}
+        >
           <HStack
-            w={{base: '65%',sm: '100%'}}
-            mt="auto"
+            w={{ base: '65%', sm: '100%' }}
             color="white"
             justifyContent={'center'}
-            pb={{ base: '2xl', sm: 'md' }}
           >
             <Text>Design By：Hsuan Yi</Text>
             <Divider orientation="vertical" />
             <Text>Code By ：Ting Yu Chen</Text>
           </HStack>
-          <Text>version {version}</Text>
-        </VStack>
-      </Flex>
+          <Text color="#ccc">version {version}</Text>
+        </Box>
+      </VStack>
     </Box>
   )
 }

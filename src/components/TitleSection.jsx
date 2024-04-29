@@ -2,7 +2,7 @@ import { Box, Container, Center, Text } from '@chakra-ui/react'
 import Button from '@/components/Button'
 import { Children, isValidElement } from 'react'
 
-export default function TitleSection({ heading, title, content, children, viewBtn = true }) {
+export default function TitleSection({ heading, title, content, children, viewBtn = true, ...reset }) {
   let afterSlot = null
   Children.forEach(children, (child) => {
     if (!isValidElement(child)) return null
@@ -11,13 +11,14 @@ export default function TitleSection({ heading, title, content, children, viewBt
     }
   })
   return (
-    <>
+   
       <Center
         flex={1}
         flexDir={'column'}
         textAlign={'center'}
         justifyItems={'center'}
         alignItems={'center'}
+        {...reset}
       >
     
           <Box
@@ -49,6 +50,6 @@ export default function TitleSection({ heading, title, content, children, viewBt
             rounded={true}
           />}
       </Center>
-    </>
+ 
   )
 }

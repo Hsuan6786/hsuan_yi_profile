@@ -28,7 +28,6 @@ export default function HeroSection() {
         label="Download Resume"
         color="accent"
         variant="outline"
-        rightIcon={true}
         rounded={true}
       />
     </Hero>

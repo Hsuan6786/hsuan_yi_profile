@@ -39,7 +39,7 @@ export default function Contacts() {
           px="4xl"
           textAlign={'center'}
         >
-          <Text textStyle={'content'}>
+          <Text textStyle={'content'} color="dark-green">
             如有任何工作相關、合作諮詢的需求
             <br />
             歡迎來信與我聯絡！

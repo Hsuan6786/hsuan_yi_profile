@@ -14,7 +14,6 @@ export default function ErrorPage() {
       </Text>
       <CustomButton
         variant="outline"
-        rightIcon={true}
         label="Back Home"
         color="accent"
         onClick={()=> navigate('/')}

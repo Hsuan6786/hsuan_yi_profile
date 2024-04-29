@@ -28,6 +28,7 @@ export default function InputSendEmail(props) {
         {...props.btnattr}
         label="Sent email"
         color="accent"
+        rightIcon={false}
       />
     </Stack>
   )

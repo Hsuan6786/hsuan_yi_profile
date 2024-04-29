@@ -1,6 +1,7 @@
 import { Image, Box, Container, Center, Text } from '@chakra-ui/react'
 import Button from '@/components/Button'
 import Carousel from './Carousel'
+import TitleSection from '@/components/TitleSection'
 
 export default function Works() {
   return (
@@ -10,7 +11,7 @@ export default function Works() {
         top="10%"
         left="10%"
         zIndex="-1"
-				display={{base: 'none', lg:'block'}}
+        display={{ base: 'none', lg: 'block' }}
         src="assets/laptop.svg"
       />
 
@@ -22,13 +23,12 @@ export default function Works() {
         alignItems={'center'}
       >
         <Container maxW={'360px'}>
-          <Box
-            textStyle="h1"
-            textColor={'secondary'}
-          >
-            Works
-          </Box>
-          <Text fontSize={'xl'}>作品</Text>
+          <TitleSection
+            heading={'Works'}
+            title={'作品'}
+            viewBtn={false}
+            mb="xl"
+          />
           <Text
             mt={'xs'}
             textStyle={'content'}
@@ -50,7 +50,7 @@ export default function Works() {
         top="5%"
         right="0"
         zIndex="-1"
-				h={{base: '227px', sm: '500px'}}
+        h={{ base: '227px', sm: '500px' }}
         src="assets/semicircle.svg"
       />
 

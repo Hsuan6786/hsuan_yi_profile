@@ -19,7 +19,7 @@ export default function TheHeader() {
       justify="space-between"
     >
       <Image
-        src="assets/logo.svg"
+        src="/public/assets/logo.svg"
         alt="I am Hsuan"
         cursor={'pointer'}
         onClick={()=> navigate('/')}

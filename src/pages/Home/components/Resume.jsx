@@ -9,8 +9,10 @@ import {
   Text,
   VStack,
   useBreakpointValue,
+  Flex,
 } from '@chakra-ui/react'
 import Button from '@/components/Button'
+import TitleSection from '@/components/TitleSection'
 
 export default function Resume() {
   const content = {
@@ -67,13 +69,12 @@ export default function Resume() {
         alignItems={'center'}
       >
         <Container maxW={'360px'}>
-          <Box
-            textStyle="h1"
-            textColor={'secondary'}
-          >
-            Resume
-          </Box>
-          <Text fontSize={'xl'}>關於我</Text>
+          <TitleSection
+            heading={'Resume'}
+            title={'關於我'}
+            viewBtn={false}
+            mb="xl"
+          />
           <Text
             mt={'xs'}
             textStyle={'content'}
@@ -116,13 +117,16 @@ export default function Resume() {
           src="assets/illustration_girl-laptop.svg"
         />
         <_Card data={content.ui} />
-        <_Card data={content.visual} />
+        <_Card
+          bg="beige.300"
+          data={content.visual}
+        />
       </Stack>
     </Box>
   )
 }
 
-function _Card({ data = {} }) {
+function _Card({ data = {}, ...rest }) {
   const { title, caption, amount, list = [], image } = data
   return (
     <VStack
@@ -130,9 +134,19 @@ function _Card({ data = {} }) {
       p="2xl"
       bg="primary"
       borderRadius={'24px'}
+      {...rest}
     >
       <Text textStyle={'h4'}>{title}</Text>
-      <Text textStyle={'h1'}>{amount}+</Text>
+      <Flex textStyle={'h1'}>
+        {amount}
+        <Text
+          textStyle={'h4'}
+          lineHeight="unset"
+        
+        >
+          <sub style={{  bottom:"-1.25em"}} textStyle={'h4'}>+</sub>
+        </Text>
+      </Flex>
       <Text
         pb="md"
         textStyle={'body1'}
@@ -146,11 +160,15 @@ function _Card({ data = {} }) {
         src={`assets/${image}.svg`}
       />
 
-      <UnorderedList w="100%" textAlign={'left'}>
+      <UnorderedList
+        w="100%"
+        textAlign={'left'}
+      >
         {list.map((i, idx) => (
           <ListItem
             key={`card-${idx}`}
             textStyle={'content'}
+            color="dark-green"
           >
             {i}
           </ListItem>
