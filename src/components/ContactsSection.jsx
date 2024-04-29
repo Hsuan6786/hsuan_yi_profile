@@ -6,7 +6,7 @@ export default function Contacts() {
   return (
     <VStack
       pos="relative"
-      pt="auto"
+      pt="5xl"
     >
       <Image
         pos="absolute"

@@ -52,11 +52,12 @@ export default function TheFooter() {
             sm: 'assets/bg-footer.png',
           })}
         />
-        <VStack mt="5xl">
+        <VStack mt="auto">
           <_Menu />
           <InputSendEmail
             display={{ base: 'none', sm: 'block' }}
             mt="2xl"
+            px="2xl" 
           />
           <SocialMediaLinks mt="2xl" />
           <HStack
