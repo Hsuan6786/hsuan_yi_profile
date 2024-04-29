@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/hsuan_yi_profile/static/css/main.72fdef49.css",
-    "main.js": "/hsuan_yi_profile/static/js/main.2fcc06ad.js",
+    "main.js": "/hsuan_yi_profile/static/js/main.b07c7eb6.js",
     "static/css/129.52788a21.chunk.css": "/hsuan_yi_profile/static/css/129.52788a21.chunk.css",
-    "static/js/129.2d76d191.chunk.js": "/hsuan_yi_profile/static/js/129.2d76d191.chunk.js",
+    "static/js/129.26e1ce08.chunk.js": "/hsuan_yi_profile/static/js/129.26e1ce08.chunk.js",
     "static/js/290.ea52811e.chunk.js": "/hsuan_yi_profile/static/js/290.ea52811e.chunk.js",
     "static/css/226.52788a21.chunk.css": "/hsuan_yi_profile/static/css/226.52788a21.chunk.css",
-    "static/js/226.ebe2b1d2.chunk.js": "/hsuan_yi_profile/static/js/226.ebe2b1d2.chunk.js",
+    "static/js/226.dd01324f.chunk.js": "/hsuan_yi_profile/static/js/226.dd01324f.chunk.js",
     "static/js/40.0e111f6c.chunk.js": "/hsuan_yi_profile/static/js/40.0e111f6c.chunk.js",
     "static/js/28.ecd0d7b9.chunk.js": "/hsuan_yi_profile/static/js/28.ecd0d7b9.chunk.js",
     "static/js/510.ad75eee5.chunk.js": "/hsuan_yi_profile/static/js/510.ad75eee5.chunk.js",
@@ -137,12 +137,12 @@
     "static/media/icon-arrow_open.svg": "/hsuan_yi_profile/static/media/icon-arrow_open.db184d11daff4905f419fc3b1b79ec58.svg",
     "static/media/icon-light-mail.svg": "/hsuan_yi_profile/static/media/icon-light-mail.35bfed4256f7d700bbe3224f87ac72e5.svg",
     "main.72fdef49.css.map": "/hsuan_yi_profile/static/css/main.72fdef49.css.map",
-    "main.2fcc06ad.js.map": "/hsuan_yi_profile/static/js/main.2fcc06ad.js.map",
+    "main.b07c7eb6.js.map": "/hsuan_yi_profile/static/js/main.b07c7eb6.js.map",
     "129.52788a21.chunk.css.map": "/hsuan_yi_profile/static/css/129.52788a21.chunk.css.map",
-    "129.2d76d191.chunk.js.map": "/hsuan_yi_profile/static/js/129.2d76d191.chunk.js.map",
+    "129.26e1ce08.chunk.js.map": "/hsuan_yi_profile/static/js/129.26e1ce08.chunk.js.map",
     "290.ea52811e.chunk.js.map": "/hsuan_yi_profile/static/js/290.ea52811e.chunk.js.map",
     "226.52788a21.chunk.css.map": "/hsuan_yi_profile/static/css/226.52788a21.chunk.css.map",
-    "226.ebe2b1d2.chunk.js.map": "/hsuan_yi_profile/static/js/226.ebe2b1d2.chunk.js.map",
+    "226.dd01324f.chunk.js.map": "/hsuan_yi_profile/static/js/226.dd01324f.chunk.js.map",
     "40.0e111f6c.chunk.js.map": "/hsuan_yi_profile/static/js/40.0e111f6c.chunk.js.map",
     "28.ecd0d7b9.chunk.js.map": "/hsuan_yi_profile/static/js/28.ecd0d7b9.chunk.js.map",
     "510.ad75eee5.chunk.js.map": "/hsuan_yi_profile/static/js/510.ad75eee5.chunk.js.map",
@@ -153,6 +153,6 @@
   },
   "entrypoints": [
     "static/css/main.72fdef49.css",
-    "static/js/main.2fcc06ad.js"
+    "static/js/main.b07c7eb6.js"
   ]
 }
