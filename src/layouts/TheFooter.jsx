@@ -63,6 +63,7 @@ export default function TheFooter() {
             w={{base: '65%',sm: '100%'}}
             mt="auto"
             color="white"
+            justifyContent={'center'}
             pb={{ base: '2xl', sm: 'md' }}
           >
             <Text>Design By：Hsuan Yi</Text>

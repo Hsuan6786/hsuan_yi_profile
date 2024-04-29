@@ -136,7 +136,6 @@ export default function GachaAnimation() {
         <rect
           width="640"
           height="640"
-          fill="#F5F5F5"
         />
         <g id="Group 4435">
           <g
