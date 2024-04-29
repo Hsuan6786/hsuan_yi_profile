@@ -6,13 +6,13 @@ export default function Contacts() {
   return (
     <VStack
       pos="relative"
-      pt="5xl"
+      pt="auto"
     >
       <Image
         pos="absolute"
         display={{ base: 'none', sm: 'block' } }
-        w="min(358px, 15vw)"
-        left="5%"
+        w="min(358px, 20vw)"
+        left="0"
         top="35%"
         src="assets/illustration_random-arrow.svg"
       />
@@ -28,7 +28,6 @@ export default function Contacts() {
       <TitleSection
         heading={'Contacts'}
         title={'聯絡資訊'}
-
         viewBtn={false}
       >
         <Box
@@ -40,7 +39,7 @@ export default function Contacts() {
           px="4xl"
           textAlign={'center'}
         >
-          <Text>
+          <Text textStyle={'content'}>
             如有任何工作相關、合作諮詢的需求
             <br />
             歡迎來信與我聯絡！
