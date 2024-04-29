@@ -14,9 +14,10 @@ import {
 import SocialMediaLinks from '../components/SocialMediaLinks'
 import InputSendEmail from '../components/InputSentEmail'
 const packageJson = require('../../package.json');
-const reactVersion = packageJson.dependencies.react;
 
-console.log(reactVersion)
+const version = packageJson.version;
+
+
 export default function TheFooter() {
   return (
     <Box pt="5xl">
@@ -68,7 +69,7 @@ export default function TheFooter() {
             <Divider orientation="vertical" />
             <Text>Code By ：Ting Yu Chen</Text>
           </HStack>
-          <Text>version {reactVersion}</Text>
+          <Text>version {version}</Text>
         </VStack>
       </Flex>
     </Box>
