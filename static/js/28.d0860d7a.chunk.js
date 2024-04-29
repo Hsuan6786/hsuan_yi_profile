@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkhsuan_yi_profile=self.webpackChunkhsuan_yi_profile||[]).push([[28],{7028:(e,r,s)=>{s.r(r),s.d(r,{default:()=>i});var n=s(1365),c=s(3446);function i(){const e=(0,n.r5)();return console.error(e),(0,c.jsxs)("div",{id:"error-page",children:[(0,c.jsx)("h1",{children:"Oops!"}),(0,c.jsx)("p",{children:"Sorry, an unexpected error has occurred."}),(0,c.jsx)("p",{children:(0,c.jsx)("i",{children:e.statusText||e.message})})]})}}}]);
-//# sourceMappingURL=28.d0860d7a.chunk.js.map
