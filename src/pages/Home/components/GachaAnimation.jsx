@@ -24,27 +24,26 @@ export default function GachaAnimation() {
         yoyo: true,
       }
     )
-
+    const duration = 1.5
     // handler animation
     handlerTween.current = gsap
       .timeline({ paused: true })
       .to('#handler', {
-        duration: 0.9,
+        duration: duration + .1,
         rotation: 35,
         transformOrigin: 'center',
       })
       .to(
         '#handler',
         {
-          duration: 0.9,
+          duration:  duration + .1,
           transformOrigin: 'center',
           ease: 'none',
           rotation: 85,
         },
-        '+=.9'
+        `+=.${duration+5}`
       )
 
-      const duration = .5
     // gacha animation
     vibrateTween.current = gsap
       .timeline({ paused: true })
@@ -73,7 +72,7 @@ export default function GachaAnimation() {
           clearProps: 'x',
           stagger: 0.02,
         },
-        '+=.5'
+        `+=.${duration+5}`
       )
 
     rotateTween.current = gsap
@@ -93,7 +92,7 @@ export default function GachaAnimation() {
           ease: 'none',
           stagger: 0.1,
         },
-        '+=.5'
+        `+=.${duration+5}`
       )
       .from('#get-egg', {
         scale: 0.2,
