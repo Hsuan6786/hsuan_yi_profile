@@ -12,6 +12,7 @@ export default function HeroSection() {
       <Text
         pt="xl"
         textStyle={'content'}
+        color="dark-green"
       >
         UI / UX 相關工作機會積極尋找中。
         <br />

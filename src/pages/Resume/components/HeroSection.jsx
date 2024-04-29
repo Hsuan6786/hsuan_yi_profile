@@ -20,6 +20,7 @@ export default function HeroSection() {
       <Text
         pt="xl"
         textStyle={'content'}
+        color="dark-green"
       >
         擁有超過30個專案設計經驗，將創意轉化為實用的設計解決方案。熟練掌握各種設計工具和技術，並持續提升自我，保持對行業趨勢的敏感性。
       </Text>

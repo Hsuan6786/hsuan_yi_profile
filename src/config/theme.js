@@ -44,7 +44,7 @@ export default extendTheme({
       letterSpacing: '0.06em',
     },
     h3: {
-      fontSize: ['28px', '24px'],
+      fontSize: { base: '24px', sm: '28px' },
       fontWeight: ['700', '500'],
       lineHeight: '60px',
       letterSpacing: '0.06em',

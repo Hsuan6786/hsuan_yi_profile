@@ -39,36 +39,45 @@ export default function PersonalCard() {
         viewBtn={false}
         mb="lg"
       />
-     
-      <ResumePersonalCard>
-      <Box mt={{base: 'lg', sm: 0}}>
-        {infoList.map((info, idx) => (
-          <_InfoSection
-            key={`info-${idx}`}
-            index={idx}
-            info={info}
-          />
-        ))}
+
+      <ResumePersonalCard
+        imageWidth={{ base: '100%', sm: '267px' }}
+        w="min(1130px,95%)"
+      >
+        <Box mt={{ base: 'lg', sm: 0 }}>
+          {infoList.map((info, idx) => (
+            <_InfoSection
+              key={`info-${idx}`}
+              index={idx}
+              info={info}
+            />
+          ))}
         </Box>
       </ResumePersonalCard>
-      
-      
     </>
   )
 }
 
-function _InfoSection({ info,index }) {
+function _InfoSection({ info, index }) {
   const { list, title } = info
   return (
-    <Box pt={index%2 !==0 && "2xl"}>
-      <Heading textStyle={'h3'} mb="xxs">{title}</Heading>
+    <Box pt={index % 2 !== 0 && '2xl'}>
+      <Heading
+        textStyle={'h3'}
+        mb="xxs"
+      >
+        {title}
+      </Heading>
       <UnorderedList
         p="0"
         m="0"
         styleType="none"
       >
         {list.map((item, idx) => (
-          <ListItem mt="xxs"  key={`info-list-${idx}`}>
+          <ListItem
+            mt="xxs"
+            key={`info-list-${idx}`}
+          >
             <HStack color="dark-green">
               <Text textStyle={'content'}>{item.label}</Text>
               <Text textStyle={'content'}>{item.value}</Text>

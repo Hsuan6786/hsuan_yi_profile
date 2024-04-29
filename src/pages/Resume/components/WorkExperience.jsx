@@ -119,6 +119,7 @@ function _ExperienceLayout({ experience }) {
         mx={{base: '0', sm: '2xl'}}
         order={{base: 0, sm :index % 2 === 0 ? 0 : 2}}
         alignSelf={'stretch'}
+        spacing={0}
       >
         <Tag
           size="lg"
@@ -129,13 +130,15 @@ function _ExperienceLayout({ experience }) {
           flexDir="column"
           textStyle={'body2'}
         >
-          Job
-          <Text textStyle={'content'}>{index<10 ? `
+          <Text lineHeight={1}>Job</Text>
+          <Text fontSize="20px" fontWeight={'black'}>{index<10 ? `
           0${index + 1}`: index+1}</Text>
         </Tag>
         <Divider
           borderColor="beige.300"
           orientation="vertical"
+          opacity={1}
+          borderLeftWidth={'2px'}
         />
       </VStack>
 
@@ -149,10 +152,11 @@ function _ExperienceLayout({ experience }) {
         <Text
           textStyle={'h3'}
           color="secondary"
+          lineHeight={1}
         >
           {companyName}
         </Text>
-        <Box>
+        <Box my="sm">
           <Badge
             textStyle={'body1'}
             bg="beige.300"
@@ -165,7 +169,7 @@ function _ExperienceLayout({ experience }) {
         </Box>
         <UnorderedList>
           {list.map((i,index) => (
-            <ListItem key={`experienceLayout-${index}`}>{i}</ListItem>
+            <ListItem textStyle={'content'} color="dark-green" key={`experienceLayout-${index}`}>{i}</ListItem>
           ))}
         </UnorderedList>
       </Box>

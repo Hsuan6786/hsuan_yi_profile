@@ -58,7 +58,6 @@ export default function HeroSection({ title, svgImage, children }) {
           mt="2xl"
           flex={1}
           maxH="368px"
-          
         >
         
           <Image

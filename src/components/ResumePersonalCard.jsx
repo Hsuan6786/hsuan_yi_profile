@@ -8,19 +8,18 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 
-export default function PersonalCard({children,}) {
+export default function PersonalCard({ children, imageWidth,...rest }) {
   return (
     <Card
-      w="min(938px,90%)"
       mt="4xl"
       mx="auto"
-      px={{base: 'lg', sm: '3xl'}}
+      px={{ base: 'lg', sm: '3xl' }}
       py="2xl"
       borderRadius={'md'}
       direction={{ base: 'column', sm: 'row' }}
       bg="white"
       _before={useBreakpointValue({
-        base: {content: `""`},
+        base: { content: `""` },
         sm: {
           content: `""`,
           zIndex: -1,
@@ -32,12 +31,13 @@ export default function PersonalCard({children,}) {
           height: '100%',
           bg: 'beige.300',
           transform: 'rotate(-4.57deg)',
-        }
+        },
       })}
+      {...rest}
     >
       <Image
         objectFit="contain"
-        maxW={{ base: '100%', sm: '267px' }}
+        maxW={imageWidth}
         src="assets/hsuan-avatar.svg"
         alt="hsuan"
       />
@@ -46,9 +46,7 @@ export default function PersonalCard({children,}) {
         flex="1"
         gap="0"
       >
-        <CardBody p={{base: 0, sm: 'lg'}}>
-          {children}
-        </CardBody>
+        <CardBody p={{ base: 0, sm: 'lg' }}>{children}</CardBody>
       </Stack>
     </Card>
   )
