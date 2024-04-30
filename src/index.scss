@@ -12,8 +12,13 @@ body {
   .slick-list {
     margin: 0 -16px !important;
   }
-  .slick-slide > div {
-    padding: 0 16px;
+  .slick-slide {
+    & > div {
+      padding: 0 16px;
+    }
+    & img {
+      display: block!important;
+    }
   }
   @media only screen and (max-width: 768px) {
     .slick-list {

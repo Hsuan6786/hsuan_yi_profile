@@ -1,4 +1,11 @@
-import { Image, Box, Text, useBreakpointValue, Center, Flex } from '@chakra-ui/react'
+import {
+  Image,
+  Box,
+  Text,
+  useBreakpointValue,
+  Center,
+  Flex,
+} from '@chakra-ui/react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -57,8 +64,8 @@ export default function Carousel() {
         breakpoint: 576,
         settings: {
           slidesToShow: 1,
-					centerMode: true,
-					centerPadding: "60px",
+          centerMode: true,
+          centerPadding: '60px',
         },
       },
     ],
@@ -68,13 +75,11 @@ export default function Carousel() {
     left: 0,
     height: 0,
   })
-	  // const [isLtThan576] = useMediaQuery('(min-width: 576)')
-	  const offsetIdx = useBreakpointValue(
-    {
-      base: 0,
-      sm: 1,
-    },
-  )
+  // const [isLtThan576] = useMediaQuery('(min-width: 576)')
+  const offsetIdx = useBreakpointValue({
+    base: 0,
+    sm: 1,
+  })
   useEffect(() => {
     const slideElement = sliderRef?.current?.innerSlider.list.querySelector(
       `[data-index="${currentIdx + offsetIdx}"]`
@@ -88,12 +93,11 @@ export default function Carousel() {
       }
       for (let entry of entries) {
         const elementRect = entry.contentRect
- 
-
+        console.log('width', elementRect)
         setFramePhoneSize({
-          width: elementRect.width,
+          width: elementRect.width - 12,
           height: elementRect.height,
-          left: entry.target.getBoundingClientRect().left,
+          left: entry.target.getBoundingClientRect().left + 6,
         })
       }
     })
@@ -121,13 +125,14 @@ export default function Carousel() {
         afterChange={(newIdx) => setCurrentIdx(newIdx)}
       >
         {movies.map((movie, idx) => (
-          <Box key={`slide-${idx}`}>
+         
             <Image
+              style={{display:'block'}}
+              key={`slide-${idx}`}
               w="100%"
               h="100%"
               src={movie.url}
             />
-          </Box>
         ))}
       </Slider>
     </Box>
@@ -139,21 +144,33 @@ function PhoneFrameNavigation({ size, currentIdx, sliderRef, total }) {
     <Flex
       pos="absolute"
       w={`${size.width}px`}
-      h={{
-        base: `${size.height + 135}px`,
-        md: `${size.height + 120}px`,
-        xl: `${size.height + 130}px`,
-      }}
-      top={`-50px`}
+      h={`${size.height}px`}
+      top={`0`}
       justifyContent={'center'}
       alignItems={'center'}
       left={`${size.left}px`}
       zIndex={1}
     >
       <Image
+        pos="absolute"
+        top="-50px"
+        right="0"
+        w="calc(100% - 3px)"
+        h="50px"
+        src={require('/public/assets/phone-top.png')}
+      />
+      <Image
         w="100%"
         h="100%"
-        src="assets/base-phone.png"
+        src={require('/public/assets/phone-middle.png')}
+      />
+      <Image
+        pos="absolute"
+        bottom="-50px"
+        right="0"
+        w="calc(100% - 3px)"
+        h="50px"
+        src={require('/public/assets/phone-bottom.png')}
       />
       <BottomArrow
         total={total}
