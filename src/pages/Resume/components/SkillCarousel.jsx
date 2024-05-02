@@ -86,12 +86,12 @@ function _Card({ card }) {
       py="2xl"
     >
       <CardBody p="0">
-        <Heading
+        <Text
           pb="md"
           textStyle="h4"
         >
           {card.title}
-        </Heading>
+        </Text>
         <List spacing={3}>
           {card.skills.map((s, index) => (
             <ListItem

@@ -35,7 +35,7 @@ export default function Carousel() {
     },
     {
       name: 'coco',
-      url: require('/public/assets/work1.png'),
+      url: require('/public/assets/work5.png'),
     },
   ]
   const sliderRef = useRef(null)
@@ -140,6 +140,7 @@ export default function Carousel() {
 }
 
 function PhoneFrameNavigation({ size, currentIdx, sliderRef, total }) {
+  const frameHeight = 80
   return (
     <Flex
       pos="absolute"
@@ -153,10 +154,10 @@ function PhoneFrameNavigation({ size, currentIdx, sliderRef, total }) {
     >
       <Image
         pos="absolute"
-        top="-50px"
+        top="-45px"
         right="0"
         w="calc(100% - 3px)"
-        h="50px"
+        h={`45px`}
         src={require('/public/assets/phone-top.png')}
       />
       <Image
@@ -166,23 +167,24 @@ function PhoneFrameNavigation({ size, currentIdx, sliderRef, total }) {
       />
       <Image
         pos="absolute"
-        bottom="-50px"
+        bottom={`-${frameHeight}px`}
         right="0"
         w="calc(100% - 3px)"
-        h="50px"
+        h={`${frameHeight}px`}
         src={require('/public/assets/phone-bottom.png')}
       />
       <BottomArrow
         total={total}
         current={currentIdx}
         sliderRef={sliderRef}
+        offset={frameHeight}
       />
     </Flex>
   )
 }
 
 function BottomArrow(props) {
-  const { sliderRef, total, current } = props
+  const { sliderRef, total, current, offset } = props
   return (
     <Flex
       style={{
@@ -192,8 +194,8 @@ function BottomArrow(props) {
       pos="absolute"
       left={'50%'}
       bottom={{
-        base: `-50px`,
-        md: `30px`,
+        base: `-${offset + 16}px`,
+        md: `-${offset / 2  + 20}px`,
       }}
       zIndex={1}
     >

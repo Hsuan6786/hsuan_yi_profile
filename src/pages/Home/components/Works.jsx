@@ -11,6 +11,7 @@ export default function Works() {
         top="10%"
         left="10%"
         zIndex="-1"
+        width="268px"
         display={{ base: 'none', lg: 'block' }}
         src="assets/laptop.svg"
       />

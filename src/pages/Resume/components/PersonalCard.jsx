@@ -32,7 +32,7 @@ export default function PersonalCard() {
     },
   ]
   return (
-    <>
+    <Box px={{base: 'lg', sm: 0}}>
       <TitleSection
         heading={'About Me'}
         title={'關於我'}
@@ -41,8 +41,8 @@ export default function PersonalCard() {
       />
 
       <ResumePersonalCard
-        imageWidth={{ base: '100%', sm: '267px' }}
-        w="min(1130px,95%)"
+        imageWidth={{ base: '100%', sm: '363px' }}
+        w={{base: '100%', sm: 'min(1130px,85%)'}}
       >
         <Box mt={{ base: 'lg', sm: 0 }}>
           {infoList.map((info, idx) => (
@@ -54,7 +54,7 @@ export default function PersonalCard() {
           ))}
         </Box>
       </ResumePersonalCard>
-    </>
+    </Box>
   )
 }
 

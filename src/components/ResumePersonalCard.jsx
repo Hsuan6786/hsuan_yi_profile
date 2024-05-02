@@ -17,6 +17,7 @@ export default function PersonalCard({ children, imageWidth,...rest }) {
       py="2xl"
       borderRadius={'md'}
       direction={{ base: 'column', sm: 'row' }}
+      justifyContent='center'
       bg="white"
       _before={useBreakpointValue({
         base: { content: `""` },
@@ -37,13 +38,12 @@ export default function PersonalCard({ children, imageWidth,...rest }) {
     >
       <Image
         objectFit="contain"
-        maxW={imageWidth}
+        w={imageWidth}
         src="assets/hsuan-avatar.svg"
         alt="hsuan"
       />
 
       <Stack
-        flex="1"
         gap="0"
       >
         <CardBody p={{ base: 0, sm: 'lg' }}>{children}</CardBody>

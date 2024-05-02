@@ -9,12 +9,17 @@ body {
 
 .slider,
 .slider-same-height {
+  .slick-track {
+    display: flex;
+  }
   .slick-list {
     margin: 0 -16px !important;
   }
   .slick-slide {
+    height: unset;
     & > div {
       padding: 0 16px;
+      height: 100%
     }
     & img {
       display: block!important;
@@ -28,9 +33,7 @@ body {
 }
 
 .slider-same-height {
-  .slick-track {
-    display: flex;
-  }
+
   .slick-slide {
     height: inherit !important;
     & > div {

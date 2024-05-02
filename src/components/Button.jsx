@@ -4,7 +4,7 @@ import ArrowIcon from '/public/assets/icon-arrow_open.svg'
 import SvgIcon from '@/components/SvgIcon'
 
 export default function Button(props) {
-  const { rightIcon = true} = props;
+  const { children,rightIcon = true} = props;
   const btnRightIcon = rightIcon? (
     <SvgIcon
       name="arrow_open"
@@ -49,7 +49,7 @@ export default function Button(props) {
       {...getStyles}
       rightIcon={btnRightIcon}
     >
-      {props.label}
+      {children || props.label}
     </ChakraBtn>
   )
 }

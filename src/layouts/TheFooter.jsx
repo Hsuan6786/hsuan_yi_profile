@@ -102,6 +102,13 @@ function _Menu() {
       to: 'contacts',
     },
   ]
+  function navigateTo (item) {
+    navigate(item.to)
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <Stack direction={{ base: 'column', sm: 'row' }}>
       <Image
@@ -115,7 +122,7 @@ function _Menu() {
           variant="link"
           px="md"
           mr="xs"
-          onClick={()=> navigate(item.to)}
+          onClick={()=> navigateTo(item)}
         >
           {item.label}
         </Button>

@@ -18,8 +18,8 @@ export default function TheHeader() {
       px="xxl"
       justify="space-between"
     >
-      <Image
-        src="/public/assets/logo.svg"
+      <Image 
+        src={require('/public/assets/logo.svg')}
         alt="I am Hsuan"
         cursor={'pointer'}
         onClick={()=> navigate('/')}
