@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom'
 import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
 import { Suspense } from "react";
-import ButtonBackTop from '@/components/ButtonBackTop'
+
 export default function MainLayout() {
   return (
     <>
@@ -11,7 +11,6 @@ export default function MainLayout() {
         <Outlet />
       </Suspense>
       <TheFooter />
-      <ButtonBackTop/>
     </>
   )
 }

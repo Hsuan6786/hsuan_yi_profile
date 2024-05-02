@@ -14,7 +14,7 @@ import {
 import SocialMediaLinks from '../components/SocialMediaLinks'
 import InputSendEmail from '../components/InputSentEmail'
 import {useNavigate} from 'react-router-dom'
-
+import ButtonBackTop from '@/components/ButtonBackTop'
 const packageJson = require('../../package.json')
 
 const version = packageJson.version
@@ -22,13 +22,8 @@ const version = packageJson.version
 export default function TheFooter() {
   return (
     <Box pt="5xl">
-      <Image
-        display={{ base: 'block', sm: 'none' }}
-        w="100px"
-        mx="auto"
-        mb="xl"
-        src="assets/illustration_go-back-top.svg"
-      />
+      
+      <ButtonBackTop/>
       <Image
         display={{ base: 'none', sm: 'block' }}
         mx="auto"
@@ -39,7 +34,7 @@ export default function TheFooter() {
         pos="relative"
         wrap={'nowrap'}
         minH={'440px'}
-        mt={{ base: '0', sm: '-128px' }}
+        mt={{ base: 'lg', sm: '-128px' }}
         justifyContent={'center'}
         zIndex={1}
       >
@@ -53,7 +48,7 @@ export default function TheFooter() {
             sm: 'assets/bg-footer.png',
           })}
         />
-        <VStack mt="auto" spacing="2xl" >
+        <VStack mt={{base: '2xl', sm: 'auto'}} spacing="2xl" >
           <_Menu />
           <InputSendEmail
             display={{ base: 'none', sm: 'block' }}
