@@ -5,7 +5,7 @@ import {
   ListItem,
   Stack,
   Text,
-  VStack,
+  useBreakpointValue,
   Divider,
 } from '@chakra-ui/react'
 import SvgIcon from '@/components/SvgIcon'
@@ -13,18 +13,45 @@ import SvgIcon from '@/components/SvgIcon'
 export default function SiteDetails() {
   return (
     <Box
-      mx="auto"
-      w={{ base: '100%', sm: 'min(938px, 83.33%)' }}
+      mt="3xl"
+      pos="relative"
+      py="4xl"
     >
-      <Content />
-      <Image src={require('/public/assets/works-JY_CHYUN_snapshot.jpg')} />
+      <Box
+        pos="absolute"
+        zIndex={-1}
+        top={0}
+        w={'100%'}
+        h="100%"
+      >
+        <Image
+          w={'100%'}
+          h={'10%'}
+          src={useBreakpointValue({
+            base: require('/public/assets/bg-home-resume-mobile.png'),
+            sm: require('/public/assets/bg_work-detail-site.png'),
+          })}
+        />
+        <Box
+          h="90%"
+          bg="beige.100"
+        />
+      </Box>
+
+      <Box
+        mx="auto"
+        w={{ base: '100%', sm: 'min(938px, 83.33%)' }}
+      >
+        <Content />
+        <Image src={require('/public/assets/works-JY_CHYUN_snapshot.jpg')} />
+      </Box>
     </Box>
   )
 }
 
 function Content() {
   return (
-    <Box py="4xl">
+    <Box pb="4xl">
       <Text
         textStyle="h3"
         color="secondary"

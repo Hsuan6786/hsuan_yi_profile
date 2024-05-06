@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 
 import SocialMediaLinks from '../components/SocialMediaLinks'
-import InputSendEmail from '../components/InputSentEmail'
+import InputSentEmail from '../components/InputSentEmail'
 import {useNavigate} from 'react-router-dom'
 import ButtonBackTop from '@/components/ButtonBackTop'
 const packageJson = require('../../package.json')
@@ -50,7 +50,7 @@ export default function TheFooter() {
         />
         <VStack mt={{base: '2xl', sm: 'auto'}} spacing="2xl" >
           <_Menu />
-          <InputSendEmail
+          <InputSentEmail
             display={{ base: 'none', sm: 'block' }}
             px="2xl"
           />

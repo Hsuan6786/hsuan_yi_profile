@@ -78,6 +78,7 @@ export default extendTheme({
     lg: '18px',
     xl: '40px',
   },
+
   colors: {
     white: '#fff',
     primary: '#F5F3ED',

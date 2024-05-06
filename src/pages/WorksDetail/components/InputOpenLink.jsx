@@ -7,6 +7,7 @@ export default function InputSendEmail({link}) {
     <Stack
       display={'flex'}
       w="100%"
+      alignItems={{ base: 'center', sm: 'stretch' }}
       flexDirection={{ base: 'column', sm: 'row' }}
       gap={'md'}
     >

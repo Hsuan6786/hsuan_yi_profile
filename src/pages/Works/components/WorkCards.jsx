@@ -8,6 +8,7 @@ import {
   Flex,
 } from '@chakra-ui/react'
 import Pagination from './Pagination'
+import { useNavigate } from 'react-router-dom'
 
 export default function WorkCards() {
   const works = [
@@ -48,7 +49,11 @@ export default function WorkCards() {
         px={{ base: 'md', lg: '3xl' }}
         mt="4xl"
         mb="5xl"
-        templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)',md: 'repeat(3, 1fr)' }}
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          sm: 'repeat(2, 1fr)',
+          md: 'repeat(3, 1fr)',
+        }}
         gridAutoRows="auto"
         columnGap={'lg'}
         rowGap={{ base: 'lg', sm: '3xl' }}
@@ -66,8 +71,12 @@ export default function WorkCards() {
 }
 
 function _WorkCard({ work }) {
+  const navigate = useNavigate()
   return (
-    <Box minW="0" pl={{ base: '0', sm: 'md' , lg: 'xl' }}>
+    <Box
+      minW="0"
+      pl={{ base: '0', sm: 'md', lg: 'xl' }}
+    >
       <Card
         pos="relative"
         bg={{ base: 'transparent', sm: 'beige.300' }}
@@ -75,6 +84,7 @@ function _WorkCard({ work }) {
         h="100%"
         borderRadius={24}
         variant={{ base: 'unstyled', sm: 'elevated' }}
+        onClick={() => navigate('/works/details')}
       >
         <Box pos="relative">
           <_Badge />
