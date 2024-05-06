@@ -122,7 +122,7 @@ function DetailList(props) {
             {title}
           </Text>
         </Box>
-        <Box flex="3">{children || <Text>{content}</Text>}</Box>
+        <Box pt={{base:'md', sm: 0}} flex="3">{children || <Text>{content}</Text>}</Box>
       </Stack>
       <Divider
         borderColor={'beige.300'}
