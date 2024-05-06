@@ -4,6 +4,7 @@ import { lazy } from "react";
 
 const Home = lazy(() => import('@/pages/Home'))
 const Works = lazy(() => import('@/pages/Works'))
+const WorksDetail = lazy(() => import('@/pages/WorksDetail'))
 const Resume = lazy(() => import('@/pages/Resume'))
 const Contacts = lazy(() => import('@/pages/Contacts'))
 
@@ -22,6 +23,10 @@ const routers = [
       {
         path: "/works",
         element: <Works />
+      },
+      {
+        path: "/works/details",
+        element: <WorksDetail />
       },
       {
         path: "/resume",
