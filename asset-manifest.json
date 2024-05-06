@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/hsuan_yi_profile/static/css/main.e36e3451.css",
-    "main.js": "/hsuan_yi_profile/static/js/main.640ea40d.js",
+    "main.js": "/hsuan_yi_profile/static/js/main.8415ec59.js",
     "static/css/129.bbbfda56.chunk.css": "/hsuan_yi_profile/static/css/129.bbbfda56.chunk.css",
     "static/js/129.10cefddf.chunk.js": "/hsuan_yi_profile/static/js/129.10cefddf.chunk.js",
     "static/js/290.f75d80e5.chunk.js": "/hsuan_yi_profile/static/js/290.f75d80e5.chunk.js",
     "static/css/975.bbbfda56.chunk.css": "/hsuan_yi_profile/static/css/975.bbbfda56.chunk.css",
-    "static/js/975.f6b93f80.chunk.js": "/hsuan_yi_profile/static/js/975.f6b93f80.chunk.js",
+    "static/js/975.0e1b3b56.chunk.js": "/hsuan_yi_profile/static/js/975.0e1b3b56.chunk.js",
     "static/css/631.bbbfda56.chunk.css": "/hsuan_yi_profile/static/css/631.bbbfda56.chunk.css",
     "static/js/631.4f068a37.chunk.js": "/hsuan_yi_profile/static/js/631.4f068a37.chunk.js",
     "static/js/40.88ae1505.chunk.js": "/hsuan_yi_profile/static/js/40.88ae1505.chunk.js",
@@ -17,7 +17,7 @@
     "static/js/511.1383cf81.chunk.js": "/hsuan_yi_profile/static/js/511.1383cf81.chunk.js",
     "static/js/470.8a1634e1.chunk.js": "/hsuan_yi_profile/static/js/470.8a1634e1.chunk.js",
     "static/js/350.0e606b05.chunk.js": "/hsuan_yi_profile/static/js/350.0e606b05.chunk.js",
-    "static/media/works-JY_CHYUN_snapshot.jpg": "/hsuan_yi_profile/static/media/works-JY_CHYUN_snapshot.8f62f9fb41dad6bee5da.jpg",
+    "static/media/works-JY_CHYUN_snapshot.jpg": "/hsuan_yi_profile/static/media/works-JY_CHYUN_snapshot.0989f039d8686b32130a.jpg",
     "static/media/work1.png": "/hsuan_yi_profile/static/media/work1.d9ae6f62bed6d7165cdf.png",
     "static/media/work3.png": "/hsuan_yi_profile/static/media/work3.9edb6e6dad2ded588414.png",
     "static/media/work2.png": "/hsuan_yi_profile/static/media/work2.0117c2fa91a4c3066a0b.png",
@@ -155,12 +155,12 @@
     "static/media/icon-arrow_open.svg": "/hsuan_yi_profile/static/media/icon-arrow_open.db184d11daff4905f419fc3b1b79ec58.svg",
     "static/media/icon-light-mail.svg": "/hsuan_yi_profile/static/media/icon-light-mail.35bfed4256f7d700bbe3224f87ac72e5.svg",
     "main.e36e3451.css.map": "/hsuan_yi_profile/static/css/main.e36e3451.css.map",
-    "main.640ea40d.js.map": "/hsuan_yi_profile/static/js/main.640ea40d.js.map",
+    "main.8415ec59.js.map": "/hsuan_yi_profile/static/js/main.8415ec59.js.map",
     "129.bbbfda56.chunk.css.map": "/hsuan_yi_profile/static/css/129.bbbfda56.chunk.css.map",
     "129.10cefddf.chunk.js.map": "/hsuan_yi_profile/static/js/129.10cefddf.chunk.js.map",
     "290.f75d80e5.chunk.js.map": "/hsuan_yi_profile/static/js/290.f75d80e5.chunk.js.map",
     "975.bbbfda56.chunk.css.map": "/hsuan_yi_profile/static/css/975.bbbfda56.chunk.css.map",
-    "975.f6b93f80.chunk.js.map": "/hsuan_yi_profile/static/js/975.f6b93f80.chunk.js.map",
+    "975.0e1b3b56.chunk.js.map": "/hsuan_yi_profile/static/js/975.0e1b3b56.chunk.js.map",
     "631.bbbfda56.chunk.css.map": "/hsuan_yi_profile/static/css/631.bbbfda56.chunk.css.map",
     "631.4f068a37.chunk.js.map": "/hsuan_yi_profile/static/js/631.4f068a37.chunk.js.map",
     "40.88ae1505.chunk.js.map": "/hsuan_yi_profile/static/js/40.88ae1505.chunk.js.map",
@@ -174,6 +174,6 @@
   },
   "entrypoints": [
     "static/css/main.e36e3451.css",
-    "static/js/main.640ea40d.js"
+    "static/js/main.8415ec59.js"
   ]
 }
