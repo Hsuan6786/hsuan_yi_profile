@@ -49,8 +49,9 @@ export default function Hero() {
           </Text>
           <Text fontSize="48px">JY CHYUN Official Website</Text>
           <HStack>
-            {badges.map((badge) => (
+            {badges.map((badge,idx) => (
               <Badge
+                key={`badge-${idx}`}
                 pa="sm"
                 borderRadius={'90'}
                 color="dark-green"

@@ -43,8 +43,9 @@ export default function SiteInfo() {
       justifyContent={'center'}
       w={{ base: '100%', sm: 'min(1130px,85%)' }}
     >
-      {data.map((item) => (
+      {data.map((item,idx) => (
         <VStack
+          key={`data-${idx}`}
           flex="1"
           justifyContent={'flex-start'}
           alignItems={'center'}
@@ -75,8 +76,9 @@ export default function SiteInfo() {
             spacing={0}
             textAlign={'center'}
           >
-            {item.contentList.map((content) => (
+            {item.contentList.map((content, idx) => (
               <ListItem
+                key={`content-${idx}`}
                 textStyle="content"
                 color="dark-green"
               >
