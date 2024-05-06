@@ -27,10 +27,7 @@ export default function SiteDetails() {
         <Image
           w={'100%'}
           h={'10%'}
-          src={useBreakpointValue({
-            base: require('/public/assets/bg-home-resume-mobile.png'),
-            sm: require('/public/assets/bg_work-detail-site.png'),
-          })}
+          src={require('/public/assets/bg_work-detail-site.png')}
         />
         <Box
           h="90%"
@@ -43,7 +40,7 @@ export default function SiteDetails() {
         w={{ base: '100%', sm: 'min(938px, 83.33%)' }}
       >
         <Content />
-        <Image src={require('/public/assets/works-JY_CHYUN_snapshot.jpg')} />
+        <Image  px={{base: 'lg', sm: 0}} src={require('/public/assets/works-JY_CHYUN_snapshot.jpg')} />
       </Box>
     </Box>
   )
@@ -95,12 +92,13 @@ function DetailList(props) {
     <Box
       mx="auto"
       w={{ base: '100%', sm: 'min(746px,70%)' }}
+      px={{base: 'lg', sm: 0}}
     >
       <Stack
         py="3xl"
         flexDir={{ base: 'column', sm: 'row' }}
-        spacing={'4xl'}
-        alignItems={'center'}
+        spacing={{base:'0', sm:'4xl'}}
+        alignItems={{base: 'flex-start', sm:'center'}}
       >
         <SvgIcon
           size="36px"
@@ -113,6 +111,7 @@ function DetailList(props) {
           <Text
             textStyle={'body2'}
             color="beige.400"
+            textAlign='left'
           >
             {titleEn}
           </Text>

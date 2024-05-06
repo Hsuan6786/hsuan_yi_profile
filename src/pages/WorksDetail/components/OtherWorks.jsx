@@ -7,6 +7,7 @@ import {
   Center,
   Flex,
   VStack,
+  useBreakpointValue,
 } from '@chakra-ui/react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -15,10 +16,67 @@ import { skills } from '@/config/data'
 import { useRef } from 'react'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import CustomButton from '@/components/Button'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-export default function SkillCarousel() {
-  const navigate = useNavigate() 
+const works = [
+  {
+    year: '2023',
+    image: 'project1',
+    name: 'JY CHYUN Official Website',
+  },
+  {
+    year: '2023',
+    image: 'project2',
+    name: 'Y·UN Design Official Website',
+  },
+  {
+    year: '2023',
+    image: 'project3',
+    name: 'HENGXU',
+  },
+  {
+    year: '2023',
+    image: 'project4',
+    name: 'ATC Official Website',
+  },
+  {
+    year: '2023',
+    image: 'project5',
+    name: 'Goodtop Official Website',
+  },
+  {
+    year: '2023',
+    image: 'project6',
+    name: 'Septemberwine Official Website',
+  },
+]
+export default function OtherWorks() {
+  return (
+    <Box pt="4xl">
+      {useBreakpointValue({
+        base: <MobileLayout />,
+        sm: <Carousel />,
+      })}
+    </Box>
+  )
+}
+
+function MobileLayout() {
+  return (
+    <VStack>
+      <Text textStyle={'h3'}>Other Works</Text>
+      {works.map((card, idx) => (
+        <_Card
+          key={`mb-works-${idx}`}
+          work={card}
+        />
+      ))}
+    </VStack>
+  )
+}
+
+function Carousel() {
+  const navigate = useNavigate()
   const sliderRef = useRef(null)
   const settings = {
     className: 'slider',
@@ -29,38 +87,7 @@ export default function SkillCarousel() {
     variableWidth: true,
     arrows: false,
   }
-  const works = [
-    {
-      year: '2023',
-      image: 'project1',
-      name: 'JY CHYUN Official Website',
-    },
-    {
-      year: '2023',
-      image: 'project2',
-      name: 'Y·UN Design Official Website',
-    },
-    {
-      year: '2023',
-      image: 'project3',
-      name: 'HENGXU',
-    },
-    {
-      year: '2023',
-      image: 'project4',
-      name: 'ATC Official Website',
-    },
-    {
-      year: '2023',
-      image: 'project5',
-      name: 'Goodtop Official Website',
-    },
-    {
-      year: '2023',
-      image: 'project6',
-      name: 'Septemberwine Official Website',
-    },
-  ]
+
   return (
     <>
       <Flex
@@ -99,15 +126,50 @@ export default function SkillCarousel() {
           ))}
         </Slider>
       </Flex>
-      <Box mt="4xl" mb="5xl" textAlign={'center'}>
-      <CustomButton
-        label="All Works"
-        color="accent"
-        onClick={() => navigate('/works')}
-        borderRadius="100vmax"
-      />
+      <Box
+        mt="4xl"
+        mb="5xl"
+        textAlign={'center'}
+      >
+        <CustomButton
+          label="All Works"
+          color="accent"
+          onClick={() => navigate('/works')}
+          borderRadius="100vmax"
+        />
       </Box>
     </>
+  )
+}
+
+function _NavigationArrow(props) {
+  const { sliderRef } = props
+  return (
+    <Flex alignItems={'center'}>
+      <Center
+        mr="sm"
+        w="40px"
+        h="40px"
+        borderRadius="100vmax"
+        bg="secondary"
+        color="white"
+        onClick={() => sliderRef?.current?.slickPrev()}
+      >
+        <IoIosArrowBack />
+      </Center>
+
+      <Center
+        mr="sm"
+        w="40px"
+        h="40px"
+        borderRadius="100vmax"
+        bg="secondary"
+        color="white"
+        onClick={() => sliderRef?.current?.slickNext()}
+      >
+        <IoIosArrowForward />
+      </Center>
+    </Flex>
   )
 }
 
@@ -183,37 +245,6 @@ function _Badge() {
       >
         Design
       </Text>
-    </Flex>
-  )
-}
-
-function _NavigationArrow(props) {
-  const { sliderRef } = props
-  return (
-    <Flex alignItems={'center'}>
-      <Center
-        mr="sm"
-        w="40px"
-        h="40px"
-        borderRadius="100vmax"
-        bg="secondary"
-        color="white"
-        onClick={() => sliderRef?.current?.slickPrev()}
-      >
-        <IoIosArrowBack />
-      </Center>
-
-      <Center
-        mr="sm"
-        w="40px"
-        h="40px"
-        borderRadius="100vmax"
-        bg="secondary"
-        color="white"
-        onClick={() => sliderRef?.current?.slickNext()}
-      >
-        <IoIosArrowForward />
-      </Center>
     </Flex>
   )
 }
