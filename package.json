@@ -1,6 +1,6 @@
 {
   "name": "hsuan_yi_profile",
-  "version": "0.2.0",
+  "version": "0.2.6",
   "private": true,
   "homepage": "process.env.PUBLIC_URL",
   "dependencies": {

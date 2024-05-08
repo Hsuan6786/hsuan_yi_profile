@@ -15,19 +15,19 @@ export default function SocialMediaLinks({
   const platforms = {
     104: {
       icon: Icon104,
-      to: '',
+      to: 'https://pda.104.com.tw/profile/edit?vno=7661witr8',
     },
     cakeresume: {
       icon: IconCake,
-      to: '',
+      to: 'https://www.cakeresume.com/s--_sgDwoHMGF5UVqQ094G4Sg--/ring-yellow',
     },
     behance: {
       icon: IconBehance,
-      to: '',
+      to: 'https://www.behance.net/jessie8581b968/projects',
     },
     mail: {
       icon: IconMail,
-      to: '',
+      to: 'mailto:hsuan88815@gmail.com',
     },
   }
   return (
@@ -41,7 +41,7 @@ export default function SocialMediaLinks({
             <Link
               key={`media-${idx}`}
               color="white"
-              href="#"
+              href={platforms[i].to}
             >
               <Circle
                 size={size || '32px'}
