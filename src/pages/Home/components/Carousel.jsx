@@ -193,7 +193,7 @@ function BottomArrow(props) {
       pos="absolute"
       left={'50%'}
       bottom={{
-        base: `-${offset + 16}px`,
+        base: `-${offset - 20}px`,
         md: `-${offset / 2  + 20}px`,
       }}
       zIndex={1}
