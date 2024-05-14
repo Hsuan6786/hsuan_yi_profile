@@ -9,40 +9,10 @@ import {
 } from '@chakra-ui/react'
 import Pagination from './Pagination'
 import { useNavigate } from 'react-router-dom'
+import {works} from '@/config/data-works.js'
 
 export default function WorkCards() {
-  const works = [
-    {
-      year: '2023',
-      image: 'project1',
-      name: 'JY CHYUN Official Website',
-    },
-    {
-      year: '2023',
-      image: 'project2',
-      name: 'Y·UN Design Official Website',
-    },
-    {
-      year: '2023',
-      image: 'project3',
-      name: 'HENGXU',
-    },
-    {
-      year: '2023',
-      image: 'project4',
-      name: 'ATC Official Website',
-    },
-    {
-      year: '2023',
-      image: 'project5',
-      name: 'Goodtop Official Website',
-    },
-    {
-      year: '2023',
-      image: 'project6',
-      name: 'Septemberwine Official Website',
-    },
-  ]
+
   return (
     <Box px={{ base: 'lg', sm: 'none' }}>
       <Grid
@@ -84,7 +54,7 @@ function _WorkCard({ work }) {
         h="100%"
         borderRadius={24}
         variant={{ base: 'unstyled', sm: 'elevated' }}
-        onClick={() => navigate('/works/details')}
+        onClick={() => navigate(`/works/${work.id}`)}
       >
         <Box pos="relative">
           <_Badge />
@@ -92,7 +62,7 @@ function _WorkCard({ work }) {
             w="100%"
             h={{ base: '460px', sm: '226px', lg: '413px' }}
             objectFit="cover"
-            src={`assets/${work.image}.png`}
+            src={work.thumbnailPath}
             alt={work.name}
             borderTopRadius="24"
             borderBottomRadius={{ base: '24', sm: 0 }}
@@ -107,7 +77,7 @@ function _WorkCard({ work }) {
             textStyle={{ base: 'body1', sm: 'body2' }}
             color="dark-green"
           >
-            {work.year}
+            {work.designIn}
           </Text>
           <Text
             textStyle={'content'}

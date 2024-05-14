@@ -11,27 +11,27 @@ import { FaUser, FaBriefcase } from 'react-icons/fa'
 import { IoSettingsSharp } from 'react-icons/io5'
 import { BsFillPeopleFill } from 'react-icons/bs'
 
-export default function SiteInfo() {
+export default function SiteInfo({work}) {
   const data = [
     {
       icon: FaUser,
       title: '角色',
-      contentList: ['UI Designer', 'UX Designer', 'Visual Designer'],
+      contentList: work.designInfo.role,
     },
     {
       icon: IoSettingsSharp,
       title: '工具',
-      contentList: ['Figma', 'Adobe Photoshop'],
+      contentList: work.designInfo.tools,
     },
     {
       icon: FaBriefcase,
       title: '負責項目',
-      contentList: ['資料整合', '客戶溝通', '版面架構設計', '網站測試'],
+      contentList: work.designInfo.responsibilities,
     },
     {
       icon: BsFillPeopleFill,
       title: '團隊人數',
-      contentList: ['4人'],
+      contentList: [`${work.designInfo.teamSize}人`],
     },
   ]
   return (

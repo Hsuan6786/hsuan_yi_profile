@@ -25,7 +25,7 @@ const routers = [
         element: <Works />
       },
       {
-        path: "/works/details",
+        path: "/works/:id",
         element: <WorksDetail />
       },
       {

@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import SvgIcon from '@/components/SvgIcon'
 
-export default function SiteDetails() {
+export default function SiteDetails({ work }) {
   return (
     <Box
       mt="3xl"
@@ -39,14 +39,17 @@ export default function SiteDetails() {
         mx="auto"
         w={{ base: '100%', sm: 'min(938px, 83.33%)' }}
       >
-        <Content />
-        <Image  px={{base: 'lg', sm: 0}} src={require('/public/assets/works-JY_CHYUN_snapshot.jpg')} />
+        <Content work={work} />
+        <Image
+          px={{ base: 'lg', sm: 0 }}
+          src={work.projectSnapShotPath}
+        />
       </Box>
     </Box>
   )
 }
 
-function Content() {
+function Content({work}) {
   return (
     <Box pb="4xl">
       <Text
@@ -57,30 +60,27 @@ function Content() {
         Site Details
       </Text>
       <DetailList
-        title="客戶背景"
+        title={'客戶背景'}
         titleEn="Client Profile"
-        content="枝群專注於連接器和天線相關組件的研發和製造，為客戶提供高品質的產品和服務。"
+        content={work.projectInfo.customerBackground}
       />
 
       <DetailList
         title="產品目的"
         titleEn="Product Purpose"
       >
-        <Text>創建B2B平台，展示產品資訊，提供諮詢管道。</Text>
+        <Text>{work.projectInfo.productPurpose.title}</Text>
         <UnorderedList>
-          <ListItem>
-            網站主要面向國際客戶，擁有多語系，並以英文版為主。
-          </ListItem>
-          <ListItem>傳統產業設計-工業金屬類</ListItem>
-          <ListItem>詢價表單設計</ListItem>
-          <ListItem>多階層選單 (menu )、搜尋框設計</ListItem>
+          {work.projectInfo.productPurpose.content.map((content) => (
+            <ListItem> {content} </ListItem>
+          ))}
         </UnorderedList>
       </DetailList>
 
       <DetailList
         title="設計理念"
         titleEn="Design Concept"
-        content="以客戶的標準色為主色，展現簡約與現代感融合，通過精心製作的圖像和視覺元素，營造出令人印象深刻的品牌形象，並為用戶提供清晰、直觀的導航體驗。"
+        content={work.projectInfo.designConcept}
       />
     </Box>
   )
@@ -92,13 +92,13 @@ function DetailList(props) {
     <Box
       mx="auto"
       w={{ base: '100%', sm: 'min(746px,70%)' }}
-      px={{base: 'lg', sm: 0}}
+      px={{ base: 'lg', sm: 0 }}
     >
       <Stack
         py="3xl"
-        flexDir={{ base: 'column', sm: 'row' }}
-        spacing={{base:'0', sm:'4xl'}}
-        alignItems={{base: 'flex-start', sm:'center'}}
+        flexDir={{ base: 'column', md: 'row' }}
+        spacing={{ base: '0', md: '4xl' }}
+        alignItems={{ base: 'flex-start', md: 'center' }}
       >
         <SvgIcon
           size="36px"
@@ -111,7 +111,7 @@ function DetailList(props) {
           <Text
             textStyle={'body2'}
             color="beige.400"
-            textAlign='left'
+            textAlign="left"
           >
             {titleEn}
           </Text>
@@ -122,7 +122,12 @@ function DetailList(props) {
             {title}
           </Text>
         </Box>
-        <Box pt={{base:'md', sm: 0}} flex="3">{children || <Text>{content}</Text>}</Box>
+        <Box
+          pt={{ base: 'md', sm: 0 }}
+          flex="3"
+        >
+          {children || <Text>{content}</Text>}
+        </Box>
       </Stack>
       <Divider
         borderColor={'beige.300'}

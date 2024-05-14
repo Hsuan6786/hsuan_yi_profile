@@ -3,7 +3,7 @@ import CustomButton from '@/components/Button'
 
 export default function InputSentEmail(props) {
   const email = 'hsuan88815@gmail.com'
-  console.log({...props})
+
   return (
     <Stack
       {...props}

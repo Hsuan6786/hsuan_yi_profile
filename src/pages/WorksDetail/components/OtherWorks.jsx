@@ -17,51 +17,62 @@ import { useRef } from 'react'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import CustomButton from '@/components/Button'
 import { useNavigate } from 'react-router-dom'
+import { works } from '@/config/data-works.js'
+// const works = [
+//   {
+//     year: '2023',
+//     image: 'project1',
+//     name: 'JY CHYUN Official Website',
+//   },
+//   {
+//     year: '2023',
+//     image: 'project2',
+//     name: 'Y·UN Design Official Website',
+//   },
+//   {
+//     year: '2023',
+//     image: 'project3',
+//     name: 'HENGXU',
+//   },
+//   {
+//     year: '2023',
+//     image: 'project4',
+//     name: 'ATC Official Website',
+//   },
+//   {
+//     year: '2023',
+//     image: 'project5',
+//     name: 'Goodtop Official Website',
+//   },
+//   {
+//     year: '2023',
+//     image: 'project6',
+//     name: 'Septemberwine Official Website',
+//   },
+// ]
+export default function OtherWorks({ work }) {
+  const others = works.filter((other) => other.id !== work.id)
+  const randomWorks = getRandomWorks(others,3)
+  console.log(randomWorks)
+  function getRandomWorks(arr, num) {
+    return arr
+      .sort((x, y) => {
+        return Math.random() > 0.5 ? -1 : 1
+      })
+      .slice(0, num)
+  }
 
-const works = [
-  {
-    year: '2023',
-    image: 'project1',
-    name: 'JY CHYUN Official Website',
-  },
-  {
-    year: '2023',
-    image: 'project2',
-    name: 'Y·UN Design Official Website',
-  },
-  {
-    year: '2023',
-    image: 'project3',
-    name: 'HENGXU',
-  },
-  {
-    year: '2023',
-    image: 'project4',
-    name: 'ATC Official Website',
-  },
-  {
-    year: '2023',
-    image: 'project5',
-    name: 'Goodtop Official Website',
-  },
-  {
-    year: '2023',
-    image: 'project6',
-    name: 'Septemberwine Official Website',
-  },
-]
-export default function OtherWorks() {
   return (
     <Box pt="4xl">
       {useBreakpointValue({
-        base: <MobileLayout />,
-        sm: <Carousel />,
+        base: <MobileLayout works={randomWorks} />,
+        sm: <Carousel works={randomWorks} />,
       })}
     </Box>
   )
 }
 
-function MobileLayout() {
+function MobileLayout({works}) {
   return (
     <VStack>
       <Text textStyle={'h3'}>Other Works</Text>
@@ -75,7 +86,7 @@ function MobileLayout() {
   )
 }
 
-function Carousel() {
+function Carousel({works}) {
   const navigate = useNavigate()
   const sliderRef = useRef(null)
   const settings = {
@@ -190,7 +201,7 @@ function _Card({ work }) {
             w="100%"
             h={{ base: '460px', sm: '226px', lg: '413px' }}
             objectFit="cover"
-            src={require(`/public/assets/${work.image}.png`)}
+            src={work.thumbnailPath}
             alt={work.name}
             borderTopRadius="24"
             borderBottomRadius={{ base: '24', sm: 0 }}
@@ -205,7 +216,7 @@ function _Card({ work }) {
             textStyle={{ base: 'body1', sm: 'body2' }}
             color="dark-green"
           >
-            {work.year}
+            {work.designIn}
           </Text>
           <Text
             textStyle={'content'}

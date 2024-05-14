@@ -93,7 +93,6 @@ export default function Carousel() {
       }
       for (let entry of entries) {
         const elementRect = entry.contentRect
-        console.log('width', elementRect)
         setFramePhoneSize({
           width: elementRect.width - 12,
           height: elementRect.height,
