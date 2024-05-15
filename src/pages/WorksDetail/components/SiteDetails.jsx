@@ -118,6 +118,7 @@ function DetailList(props) {
           <Text
             color="secondary"
             textStyle={'h4'}
+            textAlign={'left'}
           >
             {title}
           </Text>

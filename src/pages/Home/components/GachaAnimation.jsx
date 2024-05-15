@@ -1,4 +1,4 @@
-import { Image } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { RoughEase } from 'gsap/EasePack'
@@ -25,6 +25,10 @@ export default function GachaAnimation() {
       }
     )
     const duration = 1.5
+
+    gsap.set('#get-egg', {
+      y: -50,
+    })
     // handler animation
     handlerTween.current = gsap.timeline({ paused: true }).to('#handler', {
       duration: duration + 0.1,
@@ -34,18 +38,22 @@ export default function GachaAnimation() {
     })
 
     // gacha animation
-    vibrateTween.current = gsap.timeline({ paused: true }).to('#egg', {
-      duration,
-      y: -5,
-      ease: RoughEase.ease.config({
-        strength: 8,
-        points: 20,
-        //template: Linear.easeNone,
-        randomize: true,
-      }),
-      clearProps: 'x',
-      stagger: 0.02,
-    })
+    vibrateTween.current = gsap.timeline({ paused: true }).to(
+      '#egg',
+      {
+        duration,
+        y: -5,
+        ease: RoughEase.ease.config({
+          strength: 8,
+          points: 20,
+          //template: Linear.easeNone,
+          randomize: true,
+        }),
+        clearProps: 'x',
+        stagger: 0.02,
+      },
+      `+=.${duration + 5}`
+    )
 
     rotateTween.current = gsap
       .timeline({ paused: true })
@@ -66,7 +74,7 @@ export default function GachaAnimation() {
         motionPath: {
           path: '#trace-line',
           align: '#trace-line',
-          alignOrigin: [.5, .8],
+          alignOrigin: [0.5, 0.8],
         },
       })
 
@@ -83,24 +91,22 @@ export default function GachaAnimation() {
     play(rotateTween)
   }
   function play(tl) {
-  
     tl.current.reversed() ? tl.current.reverse() : tl.current.play()
   }
 
   return (
-    <>
+    <Box
+      w="min(640px,90vw)"
+      h={{ base: '375px', sm: '100%' }}
+      ml="auto"
+    >
       <svg
-        width="640"
-        height="100vh"
-        viewBox="0 0 640 740"
+        viewBox="0 0 640 640"
         fill="none"
         preserveAspectRatio="xMinYMin slice"
       >
         <g id="Group 4435">
-          <g
-            id="Gacha machine"
-            clipPath="url(#clip0_0_1)"
-          >
+          <g id="Gacha machine">
             <path
               id="Vector 483"
               d="M1.02405 455.111V166.603V-1.5238H638.976V525.206L483.328 618.667L469.504 628.317L448.512 636.952L433.664 638.476L415.744 636.952L387.584 631.365L353.792 621.714L273.408 595.302L33.792 497.778L17.408 488.635L7.68005 477.46L2.04805 464.762L1.02405 455.111Z"
@@ -2327,7 +2333,6 @@ export default function GachaAnimation() {
           />
           {/*clipPath="url(#shape)" */}
           <g clipPath="url(#shape)">
-            
             <g id="get-egg">
               <g id="Vector_217">
                 <mask
@@ -2830,15 +2835,6 @@ export default function GachaAnimation() {
           </g>
         </g>
         <defs>
-          <clipPath id="clip0_0_1">
-            <rect
-              width="640"
-              height="100vh"
-              fill="white"
-            />
-          </clipPath>
-        </defs>
-        <defs>
           <clipPath
             id="shape"
             x="10"
@@ -2860,6 +2856,6 @@ export default function GachaAnimation() {
           </clipPath>
         </defs>
       </svg>
-    </>
+    </Box>
   )
 }

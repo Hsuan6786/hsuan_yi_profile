@@ -10,8 +10,18 @@ import {
 } from '@chakra-ui/react'
 import Button from '@/components/Button'
 import  Hero  from '@/components/Hero'
+import Resume from '/public/assets/huang-hsuan-yi_ resume.pdf'
 
 export default function HeroSection() {
+  function downloadPdfResume() {
+    const el = document.createElement('a')
+    el.setAttribute('href', Resume)
+    el.setAttribute('download', 'huang-hsuan-yi_ resume.pdf');
+    el.style.display = 'none'
+    document.body.appendChild(el)
+    el.click()
+    document.body.removeChild(el);
+  }
   return (
     <Hero
       title="Resume"
@@ -30,6 +40,7 @@ export default function HeroSection() {
         color="accent"
         variant="outline"
         rounded={true}
+        onClick={()=> downloadPdfResume()}
       />
     </Hero>
   )

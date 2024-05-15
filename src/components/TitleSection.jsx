@@ -1,8 +1,9 @@
 import { Box, Container, Center, Text } from '@chakra-ui/react'
 import Button from '@/components/Button'
 import { Children, isValidElement } from 'react'
+import {useNavigate} from 'react-router-dom'
 
-export default function TitleSection({ heading, title, content, children, viewBtn = true, ...reset }) {
+export default function TitleSection({ heading, title, content, children, viewBtnLink,viewBtn = true, ...reset }) {
   let afterSlot = null
   Children.forEach(children, (child) => {
     if (!isValidElement(child)) return null
@@ -10,8 +11,8 @@ export default function TitleSection({ heading, title, content, children, viewBt
       afterSlot = child
     }
   })
+  const navigate = useNavigate()
   return (
-   
       <Center
         flex={1}
         flexDir={'column'}
@@ -48,6 +49,7 @@ export default function TitleSection({ heading, title, content, children, viewBt
             label="View More"
             color="accent"
             rounded={true}
+            onClick={()=> navigate(viewBtnLink)}
           />}
       </Center>
  

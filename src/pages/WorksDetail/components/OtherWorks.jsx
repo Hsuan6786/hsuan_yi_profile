@@ -185,6 +185,7 @@ function _NavigationArrow(props) {
 }
 
 function _Card({ work }) {
+  const navigate = useNavigate()
   return (
     <Box pl={{ base: '0', sm: 'md', lg: 'xl' }}>
       <Card
@@ -194,6 +195,8 @@ function _Card({ work }) {
         h="100%"
         borderRadius={24}
         variant={{ base: 'unstyled', sm: 'elevated' }}
+        cursor={'pointer'}
+        onClick={() => navigate(`/works/${work.id}`)}
       >
         <Box pos="relative">
           <_Badge />

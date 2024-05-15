@@ -48,7 +48,7 @@ export default function TheFooter() {
             sm: 'assets/bg-footer.png',
           })}
         />
-        <VStack mt={{base: '2xl', sm: 'auto'}} spacing="2xl" >
+        <VStack mt={{base: '4xl', sm: 'auto'}} spacing="2xl" >
           <_Menu />
           <InputSentEmail
             display={{ base: 'none', sm: 'block' }}
@@ -62,7 +62,7 @@ export default function TheFooter() {
           <HStack
             w={{ base: '65%', sm: '100%' }}
             color="white"
-            justifyContent={'center'}
+            mx={'auto'}
           >
             <Text>Design By：Hsuan Yi</Text>
             <Divider orientation="vertical" />

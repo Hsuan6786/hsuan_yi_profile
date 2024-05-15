@@ -25,7 +25,7 @@ export default function InputSendEmail({link}) {
         color="accent"
         rightIcon={false}
       >
-        <a href={`mailto: ${link}`}> Visit Website </a>
+        <a target='_blank' href={`${link}`}> Visit Website </a>
       </CustomButton>
     </Stack>
   )

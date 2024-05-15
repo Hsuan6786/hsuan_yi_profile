@@ -10,7 +10,7 @@ export const contacts = {
   },
   cakeresume: {
     icon: IconCake,
-    to: 'https://www.cakeresume.com/s--_sgDwoHMGF5UVqQ094G4Sg--/ring-yellow',
+    to: 'https://www.cakeresume.com/hsuanyeee',
   },
   behance: {
     icon: IconBehance,

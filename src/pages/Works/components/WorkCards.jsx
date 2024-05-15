@@ -53,6 +53,7 @@ function _WorkCard({ work }) {
         w="100%"
         h="100%"
         borderRadius={24}
+        cursor={'pointer'}
         variant={{ base: 'unstyled', sm: 'elevated' }}
         onClick={() => navigate(`/works/${work.id}`)}
       >

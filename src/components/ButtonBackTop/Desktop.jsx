@@ -47,7 +47,7 @@ export default function ButtonBackTop() {
       pos="fixed"
       zIndex={999}
       right="8px"
-      bottom={20}
+      bottom={'32px'}
       cursor={'pointer'}
       onMouseEnter={() => tween.current.play()}
       onMouseLeave={() => tween.current.reverse()}

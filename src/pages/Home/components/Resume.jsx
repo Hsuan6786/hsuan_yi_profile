@@ -72,30 +72,21 @@ export default function Resume() {
           <TitleSection
             heading={'Resume'}
             title={'關於我'}
-            viewBtn={false}
             mb="xl"
-          />
-          <Text
-            mt={'xs'}
-            textStyle={'content'}
-            textColor={'dark-green'}
+            content=" 擁有4年以上的設計實務經驗，畢業於嶺東科技大學數位媒體設計系，在學期間與科博館進行1年半左右的「石光乍現，尋鑑動物奇跡」停格動畫產學合作。"
+            viewBtn={true}
+            viewBtnLink='/resume'
           >
-            擁有4年以上的設計實務經驗，畢業於嶺東科技大學數位媒體設計系，在學期間與科博館進行1年半左右的「石光乍現，尋鑑動物奇跡」停格動畫產學合作。
-          </Text>
-          <Text
-            mt={'xs'}
-            textStyle={'content'}
-            textColor={'dark-green'}
-          >
-            大學畢業後於1111人力銀行擔任設計專員，轉職UI/UX設計師，任職於又群資訊有限公司，在職期間推動內部使用Figma，製作Prototyping、Design
-            system降低溝通成本。
-          </Text>
-          <Button
-            mt="xl"
-            label="View More"
-            color="accent"
-            rounded={true}
-          />
+            <Text
+              slot="after"
+              mt={'xs'}
+              textStyle={'content'}
+              textColor={'dark-green'}
+            >
+              大學畢業後於1111人力銀行擔任設計專員，轉職UI/UX設計師，任職於又群資訊有限公司，在職期間推動內部使用Figma，製作Prototyping、Design
+              system降低溝通成本。
+            </Text>
+          </TitleSection>
         </Container>
       </Center>
       <Stack
@@ -142,9 +133,13 @@ function _Card({ data = {}, ...rest }) {
         <Text
           textStyle={'h4'}
           lineHeight="unset"
-        
         >
-          <sub style={{  bottom:"-1.25em"}} textStyle={'h4'}>+</sub>
+          <sub
+            style={{ bottom: '-1.25em' }}
+            textStyle={'h4'}
+          >
+            +
+          </sub>
         </Text>
       </Flex>
       <Text

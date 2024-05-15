@@ -27,12 +27,14 @@ export default function MenuMobile({ menus }) {
   const navigate = useNavigate()
   return (
     <>
-      <Button
+      <Box
         ref={btnRef}
+        pa={0}
         onClick={onOpen}
-        leftIcon={<SvgIcon name="menu" />}
-        variant="unstyled"
-      />
+        fontSize={'30px'}
+      >
+        <SvgIcon name="menu" />
+      </Box>
       <Drawer
         isOpen={isOpen}
         size="full"

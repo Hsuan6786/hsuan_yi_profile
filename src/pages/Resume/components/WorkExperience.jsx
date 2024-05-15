@@ -1,6 +1,5 @@
 import {
   Box,
-  Heading,
   Divider,
   UnorderedList,
   ListItem,
@@ -112,7 +111,7 @@ function _ExperienceLayout({ experience }) {
         flex="1"
         order={{base: 0, sm :index % 2 === 0 ? 0 : 3}}
       >
-        <Image src={`assets/${image}.svg`} />
+        <Image src={`assets/${image}.png`} />
       </Box>
 
       <VStack

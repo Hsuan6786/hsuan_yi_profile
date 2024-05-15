@@ -17,6 +17,7 @@ export default function Hero() {
           flex={1}
           justifyItems={'center'}
           alignItems={'center'}
+          pb={{base: '2xl', sm: 0}}
         >
           <Container maxW={'300px'}>
             <Text fontSize={'xl'}>I’m</Text>
@@ -33,7 +34,7 @@ export default function Hero() {
               textStyle={'content'}
               textColor={'dark-green'}
             >
-              1996年生，台灣桃園人，兩年的UI/UX設計實務經驗，擅長以使用者為出發點進行思考，能獨立從需求探討、規劃流程、客戶溝通、程式溝通設計草稿到最後精稿規格的產出，並具備設計互動性介面的能力。
+              1996年生，台灣桃園人，兩年的UI/UX設計實務經驗，擅長以使用者為出發點進行思考，能獨立從需求探討、規劃流程、客戶溝通、程式溝通到最後精稿規格的產出，並具備設計互動性介面的能力。
             </Text>
             <Button
               mt="xl"

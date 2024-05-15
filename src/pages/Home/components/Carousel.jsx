@@ -16,7 +16,7 @@ import { useMediaQuery } from '@chakra-ui/react'
 
 export default function Carousel() {
   const [currentIdx, setCurrentIdx] = useState(0)
-  const movies = [
+  const works = [
     {
       name: 'coco',
       url: require('/public/assets/work1.png'),
@@ -42,7 +42,7 @@ export default function Carousel() {
   const settings = {
     className: 'slider',
     dots: false,
-    infinite: movies.length > 3,
+    infinite: works.length > 3,
     slidesToShow: 5,
     slidesToScroll: 1,
     arrows: false,
@@ -115,7 +115,7 @@ export default function Carousel() {
         size={framePhoneSize}
         sliderRef={sliderRef}
         currentIdx={currentIdx}
-        total={movies.length}
+        total={works.length}
       />
       <Slider
         ref={sliderRef}
@@ -123,7 +123,7 @@ export default function Carousel() {
         {...settings}
         afterChange={(newIdx) => setCurrentIdx(newIdx)}
       >
-        {movies.map((movie, idx) => (
+        {works.map((movie, idx) => (
          
             <Image
               style={{display:'block'}}
@@ -205,6 +205,7 @@ function BottomArrow(props) {
         borderRadius="100vmax"
         bg="secondary"
         color="white"
+        cursor={'pointer'}
         onClick={() => sliderRef?.current?.slickPrev()}
       >
         <IoIosArrowBack />
@@ -226,6 +227,7 @@ function BottomArrow(props) {
         borderRadius="100vmax"
         bg="secondary"
         color="white"
+        cursor={'pointer'}
         onClick={() => sliderRef?.current?.slickNext()}
       >
         <IoIosArrowForward />
