@@ -1,8 +1,10 @@
 import { Image, Box, Container, Center, Text, Stack } from '@chakra-ui/react'
 import GachaAnimation from './GachaAnimation'
 import Button from '@/components/Button'
+import {useNavigate} from 'react-router-dom'
 
 export default function Hero() {
+  const navigate = useNavigate() 
   return (
     <Box pos="relative"  pb="5xl">
       <Image
@@ -42,6 +44,7 @@ export default function Hero() {
               color="accent"
               variant="outline"
               rounded={true}
+              onClick={()=> navigate('/resume')}
             />
           </Container>
         </Center>
