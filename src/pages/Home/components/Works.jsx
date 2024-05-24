@@ -4,7 +4,7 @@ import TitleSection from '@/components/TitleSection'
 
 export default function Works() {
   return (
-    <Box pos="relative">
+    <Box pos="relative" pb="5xl">
       <Image
         pos="absolute"
         top="10%"

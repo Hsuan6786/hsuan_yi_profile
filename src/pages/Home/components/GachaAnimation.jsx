@@ -86,6 +86,10 @@ export default function GachaAnimation() {
   })
 
   function playAnimation() {
+    gsap.to(
+      '#tap-tag',
+      { display: 'none' },
+    )
     play(handlerTween)
     play(vibrateTween)
     play(rotateTween)
@@ -101,7 +105,7 @@ export default function GachaAnimation() {
       ml="auto"
     >
       <svg
-        viewBox="0 0 640 640"
+        viewBox="0 0 640 740"
         fill="none"
         preserveAspectRatio="xMinYMin slice"
       >

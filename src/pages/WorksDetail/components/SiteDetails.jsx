@@ -72,7 +72,7 @@ function Content({work}) {
         <Text>{work.projectInfo.productPurpose.title}</Text>
         <UnorderedList>
           {work.projectInfo.productPurpose.content.map((content,idx) => (
-            <ListItem key={`work-list-${idx}`}> {content} </ListItem>
+            <ListItem key={`work-list-${idx}`} textStyle={'content'}> {content} </ListItem>
           ))}
         </UnorderedList>
       </DetailList>
@@ -126,8 +126,10 @@ function DetailList(props) {
         <Box
           pt={{ base: 'md', sm: 0 }}
           flex="3"
+          textStyle={'content'}
+          color="dark-green"
         >
-          {children || <Text>{content}</Text>}
+          {children || <Text >{content}</Text>}
         </Box>
       </Stack>
       <Divider

@@ -33,6 +33,7 @@ export default function SkillCarousel() {
     slidesToShow: 1,
     variableWidth: true,
     arrows: false,
+    autoplay: true,
   }
 
   return (

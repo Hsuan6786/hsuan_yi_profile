@@ -16,7 +16,10 @@ import { useNavigate } from 'react-router-dom'
 import SvgIcon from '@/components/SvgIcon'
 import { works } from '@/config/data-works.js'
 
-const profileWorks = JSON.parse(JSON.stringify(works))
+
+const profileWorks = JSON.parse(JSON.stringify(works.slice(0,works.length-1)))
+
+
 export default function Carousel() {
   const navigate = useNavigate()
   const [currentIdx, setCurrentIdx] = useState(0)
@@ -25,11 +28,11 @@ export default function Carousel() {
   const settings = {
     className: 'slider',
     dots: false,
-    infinite: works.length > 3,
+    infinite: profileWorks.length > 3,
     slidesToShow: 5,
     slidesToScroll: 1,
     arrows: false,
-
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -98,7 +101,7 @@ export default function Carousel() {
         size={framePhoneSize}
         sliderRef={sliderRef}
         currentIdx={currentIdx}
-        total={works.length}
+        total={profileWorks.length}
       />
       <Slider
         ref={sliderRef}
@@ -136,7 +139,7 @@ export default function Carousel() {
 function PhoneFrameNavigation({ size, currentIdx, sliderRef, total }) {
   const navigate = useNavigate()
   const frameHeight = 80
-  console.log(works)
+
   return (
     <Flex
       pos="absolute"

@@ -11,12 +11,18 @@ import {
   useBreakpointValue,
   Flex,
 } from '@chakra-ui/react'
-import Button from '@/components/Button'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { useRef } from 'react'
 import TitleSection from '@/components/TitleSection'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Resume() {
   const content = {
     ui: {
+      id: 'ui-counter',
       title: 'UI / UX Design',
       caption: 'Projects Completed',
       amount: 30,
@@ -32,6 +38,7 @@ export default function Resume() {
       ],
     },
     visual: {
+      id: 'visual-counter',
       title: 'Visual Design',
       caption: 'Banner Design',
       amount: 60,
@@ -44,6 +51,47 @@ export default function Resume() {
         '製作報紙等排版印刷物。',
       ],
     },
+  }
+  const textAnimationConfig = {
+    textContent: 0,
+    duration: 2,
+    ease: 'power1.in',
+    snap: { textContent: 1 },
+    stagger: {
+      each: 1.0,
+    },
+  }
+  const counterTween = useRef()
+  
+
+  useGSAP(() => {
+
+    ScrollTrigger.create({
+      trigger: '.animationWrapper',
+      start: 'top bottom-=100',
+      onToggle: (self) => {
+        if(!self.isActive) return
+        playAnimation ()
+      },
+    })
+    gsap.set('.animationWrapper', {y: 50, opacity: 0})
+
+    counterTween.current = gsap
+      .timeline({ paused: true })
+      .to('.animationWrapper', {
+        y: 0,
+        opacity: 1,
+        ease: "none",
+      })
+      .from('#visual-counter', textAnimationConfig)
+      .from('#ui-counter', textAnimationConfig, 0)
+    return () => {
+      counterTween.current.kill()
+    }
+  })
+
+  function playAnimation() {
+    counterTween.current.play()
   }
   return (
     <Box
@@ -75,7 +123,7 @@ export default function Resume() {
             mb="xl"
             content=" 擁有4年以上的設計實務經驗，畢業於嶺東科技大學數位媒體設計系，在學期間與科博館進行1年半左右的「石光乍現，尋鑑動物奇跡」停格動畫產學合作。"
             viewBtn={true}
-            viewBtnLink='/resume'
+            viewBtnLink="/resume"
           >
             <Text
               slot="after"
@@ -90,6 +138,7 @@ export default function Resume() {
         </Container>
       </Center>
       <Stack
+        className='animationWrapper'
         direction={{ base: 'column', sm: 'row' }}
         w="min(938px,95%)"
         mt="3xl"
@@ -118,7 +167,7 @@ export default function Resume() {
 }
 
 function _Card({ data = {}, ...rest }) {
-  const { title, caption, amount, list = [], image } = data
+  const { id, title, caption, amount, list = [], image } = data
   return (
     <VStack
       flex="1"
@@ -129,7 +178,7 @@ function _Card({ data = {}, ...rest }) {
     >
       <Text textStyle={'h4'}>{title}</Text>
       <Flex textStyle={'h1'}>
-        {amount}
+        <span id={id}>{amount}</span>
         <Text
           textStyle={'h4'}
           lineHeight="unset"
