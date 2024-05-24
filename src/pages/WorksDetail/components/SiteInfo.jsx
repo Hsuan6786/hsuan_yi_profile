@@ -51,11 +51,13 @@ export default function SiteInfo({work}) {
           alignItems={'center'}
         >
           <Box
-            px="sm"
-            py="xs"
+            p="sm"
             borderRadius="100vmax"
             border="10px solid"
             borderColor='beige.300'
+            display={'flex'}
+            justifyContent={'center'}
+            alignItems={'center'}
           >
             <Icon
               as={item.icon}

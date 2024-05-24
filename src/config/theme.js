@@ -9,13 +9,7 @@ export default extendTheme({
   // 	body: `'Noto Sans TC Variable', '
   // 	League Spartan Variable',sans-serif`,
   // },
-  styles: {
-    global: () => ({
-      body: {
-        bg: '#F5F3ED',
-      },
-    }),
-  },
+
   space: {
     px: '1px',
     xxs: '0.25rem',
