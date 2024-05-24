@@ -18,42 +18,11 @@ import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import CustomButton from '@/components/Button'
 import { useNavigate } from 'react-router-dom'
 import { works } from '@/config/data-works.js'
-// const works = [
-//   {
-//     year: '2023',
-//     image: 'project1',
-//     name: 'JY CHYUN Official Website',
-//   },
-//   {
-//     year: '2023',
-//     image: 'project2',
-//     name: 'Y·UN Design Official Website',
-//   },
-//   {
-//     year: '2023',
-//     image: 'project3',
-//     name: 'HENGXU',
-//   },
-//   {
-//     year: '2023',
-//     image: 'project4',
-//     name: 'ATC Official Website',
-//   },
-//   {
-//     year: '2023',
-//     image: 'project5',
-//     name: 'Goodtop Official Website',
-//   },
-//   {
-//     year: '2023',
-//     image: 'project6',
-//     name: 'Septemberwine Official Website',
-//   },
-// ]
+
 export default function OtherWorks({ work }) {
   const others = works.filter((other) => other.id !== work.id)
   const randomWorks = getRandomWorks(others,3)
-  console.log(randomWorks)
+
   function getRandomWorks(arr, num) {
     return arr
       .sort((x, y) => {

@@ -1,5 +1,4 @@
 import { Image, Box, Container, Center, Text } from '@chakra-ui/react'
-import Button from '@/components/Button'
 import Carousel from './Carousel'
 import TitleSection from '@/components/TitleSection'
 

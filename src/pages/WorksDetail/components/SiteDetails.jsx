@@ -71,8 +71,8 @@ function Content({work}) {
       >
         <Text>{work.projectInfo.productPurpose.title}</Text>
         <UnorderedList>
-          {work.projectInfo.productPurpose.content.map((content) => (
-            <ListItem> {content} </ListItem>
+          {work.projectInfo.productPurpose.content.map((content,idx) => (
+            <ListItem key={`work-list-${idx}`}> {content} </ListItem>
           ))}
         </UnorderedList>
       </DetailList>

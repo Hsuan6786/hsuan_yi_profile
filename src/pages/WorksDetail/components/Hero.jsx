@@ -9,7 +9,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import InputOpenLink from './InputOpenLink'
-export default function Hero({work}) {
+export default function Hero({work ={}}) {
   return (
     <Box
       pos="relative"
@@ -48,7 +48,7 @@ export default function Hero({work}) {
           </Text>
           <Text fontSize="48px">{ work.name }</Text>
           <HStack>
-            {work.tags.map((badge,idx) => (
+            {(work.tags || []).map((badge,idx) => (
               <Badge
                 key={`badge-${idx}`}
                 pa="sm"

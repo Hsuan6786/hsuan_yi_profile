@@ -28,6 +28,7 @@ export const works = [
       designConcept:
         '以客戶的標準色為主色，展現簡約與現代感融合，通過精心製作的圖像和視覺元素，營造出令人印象深刻的品牌形象，並為用戶提供清晰、直觀的導航體驗。',
     },
+    carouselPath: require('/public/assets/work1.png'),
     thumbnailPath: require(`/public/assets/project1.png`),
     heroImagePath: require(`/public/assets/bg_work-detail-JY_CHYUN.png`),
     projectSnapShotPath: require(`/public/assets/works-JY_CHYUN_snapshot.jpg`),
@@ -59,6 +60,7 @@ export const works = [
       designConcept:
         '以客戶logo中的三角型為靈感，創造穩定、創新、尖端的品牌形象，並運用留白的設計風格讓視覺感覺更加寬敞明亮，同時突出室內設計的重點元素。',
     },
+    carouselPath: require('/public/assets/work2.png'),
     thumbnailPath: require(`/public/assets/project2.png`),
     heroImagePath: require(`/public/assets/bg_work-detail-YUN.png`),
     projectSnapShotPath: require(`/public/assets/works-YUN_snapshot.jpg`),
@@ -90,6 +92,7 @@ export const works = [
       designConcept:
         '以灰色為主色調，搭配紅色為點綴，打造一個簡約、乾淨為主調的網站。子頁面Hero的Banner可上傳背景石材及傢俱樣品，更好地展示石材的搭配細節，後台也提供影片欄位，讓用戶有更高的自由度選擇。',
     },
+    carouselPath: require('/public/assets/work3.png'),
     thumbnailPath: require(`/public/assets/project3.png`),
     heroImagePath: require(`/public/assets/bg_work-detail-HENGXU.png`),
     projectSnapShotPath: require(`/public/assets/works-HENGXU_snapshot.jpg`),
@@ -122,6 +125,7 @@ export const works = [
       designConcept:
         '整體設計風格簡約、低調，以黑白灰三色，搭配綠色作為重點色彩，營造出品牌科技感和高品質的印象。產品呈現以去背方式展示，背景添加陰影，增強視覺層次感。重視展現產品的特色和專業性，從而加強品牌的可識別性和印象。',
     },
+    carouselPath: require('/public/assets/work4.png'),
     thumbnailPath: require(`/public/assets/project4.png`),
     heroImagePath: require(`/public/assets/bg_work-detail-ATC.png`),
     projectSnapShotPath: require(`/public/assets/works-ATC_snapshot.jpg`),
@@ -153,6 +157,7 @@ export const works = [
       designConcept:
         '網站整體以暖灰色為主調，運用品牌標準色的橘色作為點綴，與色彩繽紛的布料相互搭配，產品以圓形展現布料的材質，使視覺焦點更易集中並呈現出乾淨簡約的畫面風格。基於客戶群主要為女性內衣和運動服品牌，整站注重營造柔軟、舒適、溫暖的品牌形象。',
     },
+    carouselPath: require('/public/assets/work5.png'),
     thumbnailPath: require(`/public/assets/project5.png`),
     heroImagePath: require(`/public/assets/bg_work-detail-Goodtop.png`),
     projectSnapShotPath: require(`/public/assets/works-Goodtop_snapshot.jpg`),

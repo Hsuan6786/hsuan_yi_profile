@@ -12,32 +12,15 @@ import 'slick-carousel/slick/slick-theme.css'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import { useRef, useState } from 'react'
 import { useEffect } from 'react'
-import { useMediaQuery } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
+import SvgIcon from '@/components/SvgIcon'
+import { works } from '@/config/data-works.js'
 
+const profileWorks = JSON.parse(JSON.stringify(works))
 export default function Carousel() {
+  const navigate = useNavigate()
   const [currentIdx, setCurrentIdx] = useState(0)
-  const works = [
-    {
-      name: 'coco',
-      url: require('/public/assets/work1.png'),
-    },
-    {
-      name: 'coco',
-      url: require('/public/assets/work2.png'),
-    },
-    {
-      name: 'coco',
-      url: require('/public/assets/work3.png'),
-    },
-    {
-      name: 'coco',
-      url: require('/public/assets/work4.png'),
-    },
-    {
-      name: 'coco',
-      url: require('/public/assets/work5.png'),
-    },
-  ]
+
   const sliderRef = useRef(null)
   const settings = {
     className: 'slider',
@@ -75,7 +58,7 @@ export default function Carousel() {
     left: 0,
     height: 0,
   })
-  // const [isLtThan576] = useMediaQuery('(min-width: 576)')
+
   const offsetIdx = useBreakpointValue({
     base: 0,
     sm: 1,
@@ -123,15 +106,27 @@ export default function Carousel() {
         {...settings}
         afterChange={(newIdx) => setCurrentIdx(newIdx)}
       >
-        {works.map((movie, idx) => (
-         
-            <Image
-              style={{display:'block'}}
-              key={`slide-${idx}`}
-              w="100%"
-              h="100%"
-              src={movie.url}
-            />
+        {profileWorks.map((work, idx) => (
+          <Box
+            key={`works-${idx}`}
+            pos="relative"
+            w="100%"
+            h="100%"
+            cursor={'pointer'}
+            onClick={() => navigate(`/works/${work.id}`)}
+            role="group"
+          >
+            <HoverLayout />
+            {work.carouselPath && (
+              <Image
+                style={{ display: 'block' }}
+                key={`slide-${idx}`}
+                w="100%"
+                h="100%"
+                src={work.carouselPath}
+              />
+            )}
+          </Box>
         ))}
       </Slider>
     </Box>
@@ -139,7 +134,9 @@ export default function Carousel() {
 }
 
 function PhoneFrameNavigation({ size, currentIdx, sliderRef, total }) {
+  const navigate = useNavigate()
   const frameHeight = 80
+  console.log(works)
   return (
     <Flex
       pos="absolute"
@@ -150,7 +147,15 @@ function PhoneFrameNavigation({ size, currentIdx, sliderRef, total }) {
       alignItems={'center'}
       left={`${size.left}px`}
       zIndex={1}
+      cursor={'pointer'}
+      role="group"
     >
+      <HoverLayout
+        w="90%"
+        onClick={() =>
+          navigate(`/works/${(profileWorks[currentIdx + 1] || {}).id}`)
+        }
+      />
       <Image
         pos="absolute"
         top="-45px"
@@ -194,7 +199,7 @@ function BottomArrow(props) {
       left={'50%'}
       bottom={{
         base: `-${offset - 20}px`,
-        md: `-${offset / 2  + 20}px`,
+        md: `-${offset / 2 + 20}px`,
       }}
       zIndex={1}
     >
@@ -233,5 +238,41 @@ function BottomArrow(props) {
         <IoIosArrowForward />
       </Center>
     </Flex>
+  )
+}
+
+function HoverLayout(props) {
+  return (
+    <Box
+      zIndex={'1'}
+      pos="absolute"
+      display={'none'}
+      w="100%"
+      h="100%"
+      bg="rgba(0, 0, 0, 0.4)"
+      _groupHover={{ display: 'block' }}
+      {...props}
+    >
+      <Box
+        pos="absolute"
+        left="50%"
+        top="50%"
+        transform={'translate(-50%, -50% )'}
+        zIndex={'1'}
+        as="button"
+        py="sm"
+        px="xl"
+        textStyle={'body1'}
+        bg="accent"
+        color="white"
+        borderRadius="100vmax"
+      >
+        Visit
+        <br />
+        More
+        <br />
+        <SvgIcon name="arrow_open" />
+      </Box>
+    </Box>
   )
 }

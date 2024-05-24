@@ -11,7 +11,7 @@ import { FaUser, FaBriefcase } from 'react-icons/fa'
 import { IoSettingsSharp } from 'react-icons/io5'
 import { BsFillPeopleFill } from 'react-icons/bs'
 
-export default function SiteInfo({work}) {
+export default function SiteInfo({work = {}}) {
   const data = [
     {
       icon: FaUser,
