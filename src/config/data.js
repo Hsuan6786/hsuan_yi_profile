@@ -52,4 +52,12 @@ export const skills = [
       '日文：略懂 ( JLPT N3 ) ',
     ],
   },
+  {
+    title: 'Others',
+    skills: [
+      '能運用 After Effects 製作基礎動畫。',
+      '能運用Premiere 基礎剪輯。',
+    ],
+    tools: ['ae', 'pr'],
+  },
 ]

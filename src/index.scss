@@ -4,7 +4,7 @@
 }
 
 body {
-  background: url('../public/assets/background.jpg')!important;
+  background: url('../public/assets/background.jpg') !important;
 }
 
 .slider,
@@ -19,10 +19,10 @@ body {
     height: unset;
     & > div {
       padding: 0 16px;
-      height: 100%
+      height: 100%;
     }
     & img {
-      display: block!important;
+      display: block !important;
     }
   }
   @media only screen and (max-width: 768px) {
@@ -33,11 +33,21 @@ body {
 }
 
 .slider-same-height {
-
   .slick-slide {
     height: inherit !important;
     & > div {
       height: 100%;
+    }
+  }
+}
+
+.skills {
+  .slider-same-height {
+    .slick-list {
+      padding: 24px 0;
+    }
+    .slick-slide > div {
+      padding: 0;
     }
   }
 }

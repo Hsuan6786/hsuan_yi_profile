@@ -2,8 +2,6 @@ import {
   Image,
   Card,
   CardBody,
-  Stack,
-  Heading,
   CardFooter,
   Divider,
   Box,
@@ -22,6 +20,7 @@ import { skills } from '@/config/data'
 import { useRef } from 'react'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import SvgIcon from '@/components/SvgIcon'
+import CarouselNavigation from '@/components/CarouselNavigation'
 
 export default function SkillCarousel() {
   const sliderRef = useRef(null)
@@ -38,6 +37,7 @@ export default function SkillCarousel() {
 
   return (
     <Flex
+      className='skills'
       pt="4xl"
       flexDirection={{ base: 'column', sm: 'row' }}
     >
@@ -54,7 +54,7 @@ export default function SkillCarousel() {
         >
           技能
         </Text>
-        <_NavigationArrow sliderRef={sliderRef} />
+        <CarouselNavigation sliderRef={sliderRef} />
       </VStack>
       <Slider
         ref={sliderRef}
@@ -78,14 +78,29 @@ export default function SkillCarousel() {
 }
 
 function _Card({ card }) {
-
   return (
     <Card
-      w={{ base: '75vw', sm: '55vw', md: '45vw', lg: 'min(336px, 25vw)' }}
+      pos="relative"
+      w={{ base: '80vw', sm: '60vw', md: '45vw', lg: 'min(336px, 25vw)' }}
       h="100%"
       px="xl"
       py="2xl"
+      mx={{ base: 'lg', sm: 'xl' }}
+      role="group"
     >
+      <Box
+        zIndex={-1}
+        bg="beige.300"
+        top="0"
+        left="0"
+        transform="0"
+        pos="absolute"
+        w="100%"
+        h="100%"
+        borderRadius="16px"
+        transition={'transform .1s ease-in'}
+        _groupHover={{ top: '-2px', transform: 'rotate(6deg)' }}
+      />
       <CardBody p="0">
         <Text
           pb="md"
@@ -117,16 +132,16 @@ function _Card({ card }) {
         borderBottomWidth="2px"
         color="beige.300"
       />
-      
+
       <CardFooter p="0">
-       <Text
+        <Text
           mr="md"
           textStyle={'content'}
           color="beige.400"
-          opacity={(card.tools || []).length? 1: 0}
+          opacity={(card.tools || []).length ? 1 : 0}
         >
           Tools
-        </Text> 
+        </Text>
         {card.tools?.map((tool, idx) => (
           <Image
             mr="xs"
@@ -137,36 +152,5 @@ function _Card({ card }) {
         ))}
       </CardFooter>
     </Card>
-  )
-}
-
-function _NavigationArrow(props) {
-  const { sliderRef } = props
-  return (
-    <Flex alignItems={'center'}>
-      <Center
-        mr="sm"
-        w="40px"
-        h="40px"
-        borderRadius="100vmax"
-        bg="secondary"
-        color="white"
-        onClick={() => sliderRef?.current?.slickPrev()}
-      >
-        <IoIosArrowBack />
-      </Center>
-
-      <Center
-        mr="sm"
-        w="40px"
-        h="40px"
-        borderRadius="100vmax"
-        bg="secondary"
-        color="white"
-        onClick={() => sliderRef?.current?.slickNext()}
-      >
-        <IoIosArrowForward />
-      </Center>
-    </Flex>
   )
 }

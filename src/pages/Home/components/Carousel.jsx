@@ -15,10 +15,11 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import SvgIcon from '@/components/SvgIcon'
 import { works } from '@/config/data-works.js'
+import CarouselNavigation from '@/components/CarouselNavigation'
 
-
-const profileWorks = JSON.parse(JSON.stringify(works.slice(0,works.length-1)))
-
+const profileWorks = JSON.parse(
+  JSON.stringify(works.slice(0, works.length - 1))
+)
 
 export default function Carousel() {
   const navigate = useNavigate()
@@ -180,6 +181,7 @@ function PhoneFrameNavigation({ size, currentIdx, sliderRef, total }) {
         h={`${frameHeight}px`}
         src={require('/public/assets/phone-bottom.png')}
       />
+
       <BottomArrow
         total={total}
         current={currentIdx}
@@ -191,6 +193,35 @@ function PhoneFrameNavigation({ size, currentIdx, sliderRef, total }) {
 }
 
 function BottomArrow(props) {
+  const { sliderRef, total, current, offset } = props
+  return (
+    <CarouselNavigation
+      style={{
+        transform: 'translateX(-50%)',
+      }}
+      pos="absolute"
+      left={'50%'}
+      bottom={{
+        base: `-${offset - 20}px`,
+        md: `-${offset / 2 + 20}px`,
+      }}
+      zIndex={1}
+      sliderRef={sliderRef}
+    >
+      <Text
+        mr="sm"
+        textStyle={'body1'}
+        style={{
+          textWrap: 'nowrap',
+        }}
+      >
+        {current + 1} / {total}
+      </Text>
+    </CarouselNavigation>
+  )
+}
+
+function _BottomArrow(props) {
   const { sliderRef, total, current, offset } = props
   return (
     <Flex

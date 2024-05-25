@@ -6,13 +6,14 @@ import {
   Text,
   Box,
   Flex,
+  Badge,
+  HStack,
 } from '@chakra-ui/react'
 import Pagination from './Pagination'
 import { useNavigate } from 'react-router-dom'
-import {works} from '@/config/data-works.js'
+import { works } from '@/config/data-works.js'
 
 export default function WorkCards() {
-
   return (
     <Box px={{ base: 'lg', sm: 'none' }}>
       <Grid
@@ -56,6 +57,7 @@ function _WorkCard({ work }) {
         cursor={'pointer'}
         variant={{ base: 'unstyled', sm: 'elevated' }}
         onClick={() => navigate(`/works/${work.id}`)}
+        role="group"
       >
         <Box pos="relative">
           <_Badge />
@@ -86,6 +88,27 @@ function _WorkCard({ work }) {
           >
             {work.name}
           </Text>
+          <HStack
+            gap="xs"
+            flexWrap={'wrap'}
+          >
+            {(work.tags || []).map((badge, idx) => (
+              <Badge
+                key={`badge-${idx}`}
+                px="sm"
+                borderRadius={'90'}
+                borderColor={'secondary'}
+                variant="outline"
+              >
+                <Text
+                  color="dark-green"
+                  textStyle={'body1'}
+                >
+                  {badge}
+                </Text>
+              </Badge>
+            ))}
+          </HStack>
         </CardFooter>
       </Card>
     </Box>
