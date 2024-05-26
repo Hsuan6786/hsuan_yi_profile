@@ -18,7 +18,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { skills } from '@/config/data'
 import { useRef } from 'react'
-import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import SvgIcon from '@/components/SvgIcon'
 import CarouselNavigation from '@/components/CarouselNavigation'
 

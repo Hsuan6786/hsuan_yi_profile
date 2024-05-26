@@ -12,6 +12,10 @@ import {
 import Pagination from './Pagination'
 import { useNavigate } from 'react-router-dom'
 import { works } from '@/config/data-works.js'
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import style from '../index.module.scss'
 
 export default function WorkCards() {
   return (
@@ -43,13 +47,14 @@ export default function WorkCards() {
 
 function _WorkCard({ work }) {
   const navigate = useNavigate()
+
   return (
     <Box
       minW="0"
       pl={{ base: '0', sm: 'md', lg: 'xl' }}
     >
       <Card
-        pos="relative"
+        className={style.animation}
         bg={{ base: 'transparent', sm: 'beige.300' }}
         w="100%"
         h="100%"
@@ -73,42 +78,58 @@ function _WorkCard({ work }) {
         </Box>
 
         <CardFooter
-          p="lg"
+          className="card_footer"
+          pos="relative"
           flexDir={'column'}
+          minH={'87px'}
         >
-          <Text
-            textStyle={{ base: 'body1', sm: 'body2' }}
-            color="dark-green"
+          <Box
+            className={style['card_footer-wrapper']}
+            pos={'absolute'}
+            p="lg"
+            bottom={0}
+            left="0"
+            bg={{ base: 'transparent', sm: 'beige.300' }}
+            w="100%"
           >
-            {work.designIn}
-          </Text>
-          <Text
-            textStyle={'content'}
-            color="secondary"
-          >
-            {work.name}
-          </Text>
-          <HStack
-            gap="xs"
-            flexWrap={'wrap'}
-          >
-            {(work.tags || []).map((badge, idx) => (
-              <Badge
-                key={`badge-${idx}`}
-                px="sm"
-                borderRadius={'90'}
-                borderColor={'secondary'}
-                variant="outline"
-              >
-                <Text
-                  color="dark-green"
-                  textStyle={'body1'}
+            <Text
+              textStyle={{ base: 'body1', sm: 'body2' }}
+              color="dark-green"
+            >
+              {work.designIn}
+            </Text>
+            <Text
+              textStyle={'content'}
+              color="secondary"
+            >
+              {work.name}
+            </Text>
+            <HStack
+              display={{base: 'none', sm: 'flex'}}
+              className={style['card_footer-tags']}
+              h="0"
+              gap="xs"
+              flexWrap={'wrap'}
+              overflow={'hidden'}
+            >
+              {(work.tags || []).map((badge, idx) => (
+                <Badge
+                  key={`badge-${idx}`}
+                  px="sm"
+                  borderRadius={'90'}
+                  borderColor={'secondary'}
+                  variant="outline"
                 >
-                  {badge}
-                </Text>
-              </Badge>
-            ))}
-          </HStack>
+                  <Text
+                    color="dark-green"
+                    textStyle={'body1'}
+                  >
+                    {badge}
+                  </Text>
+                </Badge>
+              ))}
+            </HStack>
+          </Box>
         </CardFooter>
       </Card>
     </Box>

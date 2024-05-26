@@ -1,0 +1,16 @@
+.animation {
+  .card_footer-wrapper {
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+  .card_footer-tags {
+    transition: all .3s ease-in-out;
+    transform: scaleY(0);    
+  }
+  &:hover {
+    .card_footer-tags {
+      height: auto;
+      transform: scaleY(1);
+    }
+  }
+}
