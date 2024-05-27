@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 export default function TheHeader() {
   const navigate = useNavigate() 
   const menus = [
-    {label: 'Home', to:'/'},
+    {label: 'Home', to:''},
     {label: 'Works', to:'works'},
     {label: 'Resume', to:'resume'},
     {label: 'Contacts', to:'contacts'},

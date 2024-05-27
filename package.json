@@ -1,6 +1,6 @@
 {
   "name": "hsuan_yi_profile",
-  "version": "0.4.0",
+  "version": "0.4.5",
   "private": true,
   "homepage": "process.env.PUBLIC_URL",
   "dependencies": {
@@ -74,8 +74,8 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "start": "PUBLIC_URL=/hsuan_yi_profile node scripts/start.js",
-    "build": "PUBLIC_URL=/hsuan_yi_profile node scripts/build.js",
+    "start": "PUBLIC_URL=/hsuan_yi_profile/ node scripts/start.js",
+    "build": "PUBLIC_URL=/hsuan_yi_profile/ node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

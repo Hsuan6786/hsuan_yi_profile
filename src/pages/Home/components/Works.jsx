@@ -40,7 +40,7 @@ export default function Works() {
         right="0"
         zIndex="-1"
         h={{ base: '227px', sm: '500px' }}
-        src="assets/semicircle.svg"
+        src='assets/semicircle.svg'
       />
 
       <Carousel />

@@ -17,7 +17,7 @@ const routers = [
     children: [
       {
         index: true,
-        path: "",
+        path: "/",
         element: <Home />
       },
       {
