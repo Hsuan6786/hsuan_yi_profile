@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hsuan_yi_profile/static/css/main.d9374680.css",
-    "main.js": "/hsuan_yi_profile/static/js/main.645ade2b.js",
+    "main.js": "/hsuan_yi_profile/static/js/main.db39cac2.js",
     "static/css/129.31547731.chunk.css": "/hsuan_yi_profile/static/css/129.31547731.chunk.css",
     "static/js/129.031beae8.chunk.js": "/hsuan_yi_profile/static/js/129.031beae8.chunk.js",
     "static/css/116.95eae760.chunk.css": "/hsuan_yi_profile/static/css/116.95eae760.chunk.css",
@@ -163,7 +163,7 @@
     "static/media/icon-light-mail.svg": "/hsuan_yi_profile/static/media/icon-light-mail.35bfed4256f7d700bbe3224f87ac72e5.svg",
     "static/media/semicircle.svg": "/hsuan_yi_profile/static/media/semicircle.49c0aacd6047facaece4fe884237abab.svg",
     "main.d9374680.css.map": "/hsuan_yi_profile/static/css/main.d9374680.css.map",
-    "main.645ade2b.js.map": "/hsuan_yi_profile/static/js/main.645ade2b.js.map",
+    "main.db39cac2.js.map": "/hsuan_yi_profile/static/js/main.db39cac2.js.map",
     "129.31547731.chunk.css.map": "/hsuan_yi_profile/static/css/129.31547731.chunk.css.map",
     "129.031beae8.chunk.js.map": "/hsuan_yi_profile/static/js/129.031beae8.chunk.js.map",
     "116.95eae760.chunk.css.map": "/hsuan_yi_profile/static/css/116.95eae760.chunk.css.map",
@@ -183,6 +183,6 @@
   },
   "entrypoints": [
     "static/css/main.d9374680.css",
-    "static/js/main.645ade2b.js"
+    "static/js/main.db39cac2.js"
   ]
 }
